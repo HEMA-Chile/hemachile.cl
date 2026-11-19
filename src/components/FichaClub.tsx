@@ -1,10 +1,11 @@
-import { Mail, Swords } from 'lucide-react'
+import { ArrowRight, Mail, Swords } from 'lucide-react'
 import { IconoInstagram } from './IconoInstagram'
 import { useTranslation } from 'react-i18next'
 import { ARMAS } from '../data/armas'
 import type { Club } from '../data/clubes'
 import { traducirHorario, type Idioma } from '../i18n'
 import { LogoClub } from './LogoClub'
+import { Enlace, rutaClub } from '../router'
 
 export function FichaClub({ club }: { club: Club }) {
   const { t, i18n } = useTranslation()
@@ -69,6 +70,14 @@ export function FichaClub({ club }: { club: Club }) {
             ))}
           </ul>
         </section>
+
+        <Enlace
+          to={rutaClub(club.id)}
+          className="inline-flex items-center gap-1 self-center font-bold text-[#cc2b31] hover:underline"
+        >
+          {t('mapa.verPagina')}
+          <ArrowRight size={16} aria-hidden />
+        </Enlace>
       </article>
     </aside>
   )

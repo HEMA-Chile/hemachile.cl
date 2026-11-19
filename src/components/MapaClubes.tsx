@@ -63,7 +63,7 @@ interface Props {
   onSeleccionar: (club: Club) => void
 }
 
-export function MapaClubes({ seleccionado, volar, onSeleccionar }: Props) {
+export default function MapaClubes({ seleccionado, volar, onSeleccionar }: Props) {
   const { t } = useTranslation()
   const tema = useTemaActual()
   const iconos = useMemo(

@@ -6,7 +6,7 @@ export type Idioma = 'es' | 'en'
 const resources = {
   es: {
     translation: {
-      title: 'Mapa de Clubes',
+      title: 'Mapa de clubes de HEMA',
       labels: {
         direccion: 'Dirección',
         horarios: 'Horarios',
@@ -17,7 +17,20 @@ const resources = {
         temaOscuro: 'Activar modo oscuro',
         temaClaro: 'Activar modo claro',
       },
-      mapa: { verClub: 'Ver {{nombre}}', listaEtiqueta: 'Clubes' },
+      mapa: { verClub: 'Ver {{nombre}}', listaEtiqueta: 'Clubes', verPagina: 'Página del club' },
+      club: {
+        subtitulo: 'Esgrima histórica (HEMA) en {{ciudad}} · Club miembro de HEMA Chile',
+        intro:
+          '{{nombre}} es un club de esgrima histórica de tradición europea (HEMA) en {{ciudad}}. Practica {{armas}}. Si quieres empezar, escríbeles para consultar por clases.',
+        comoLlegar: 'Cómo llegar (Google Maps)',
+        contacto: 'Contacto',
+        otros: 'Otros clubes de HEMA Chile',
+      },
+      noEncontrada: {
+        titulo: 'Página no encontrada',
+        texto: 'La página que buscas no existe o cambió de dirección.',
+        volver: 'Ir a la página principal',
+      },
       menu: {
         etiqueta: 'Menú principal',
         mapa: 'Mapa de clubes',
@@ -26,7 +39,7 @@ const resources = {
         camo: 'CAMO',
       },
       camo: {
-        titulo: 'CAMO',
+        titulo: 'CAMO – Congreso de Artes Marciales Occidentales',
         intro: [
           'El Congreso de Artes Marciales Occidentales (CAMO) es el encuentro nacional de la comunidad chilena de HEMA: reúne a clubes de todo el país en talleres técnicos, charlas y sparring libre entre clubes.',
           'Al término de su quinta edición, en 2017, los clubes organizadores fundaron HEMA Chile. Estas son las ediciones de las que hay registro, con las charlas y actividades de cada año.',
@@ -89,7 +102,7 @@ const resources = {
         verMapa: 'Ver en el mapa',
       },
       reconocimiento: {
-        titulo: 'Reconocimiento deportivo',
+        titulo: 'Reconocimiento deportivo de HEMA',
         intro:
           'Representantes de clubes de HEMA y HEMA Chile solicitan al Ministerio del Deporte que HEMA (Historical European Martial Arts), la esgrima histórica de tradición europea, sea reconocida como modalidad deportiva e inscrita en el Listado Oficial Único de Modalidades y Especialidades Deportivas, conforme al Decreto N° 10 de 2021.',
         porQueTitulo: '¿Por qué es importante?',
@@ -107,7 +120,7 @@ const resources = {
   },
   en: {
     translation: {
-      title: 'Clubs Map',
+      title: 'HEMA clubs map',
       labels: {
         direccion: 'Address',
         horarios: 'Schedule',
@@ -118,7 +131,20 @@ const resources = {
         temaOscuro: 'Switch to dark mode',
         temaClaro: 'Switch to light mode',
       },
-      mapa: { verClub: 'View {{nombre}}', listaEtiqueta: 'Clubs' },
+      mapa: { verClub: 'View {{nombre}}', listaEtiqueta: 'Clubs', verPagina: 'Club page' },
+      club: {
+        subtitulo: 'Historical European martial arts in {{ciudad}} · Member club of HEMA Chile',
+        intro:
+          '{{nombre}} is a historical European martial arts (HEMA) club in {{ciudad}}, Chile. It practises {{armas}}. If you want to start, get in touch to ask about classes.',
+        comoLlegar: 'Directions (Google Maps)',
+        contacto: 'Contact',
+        otros: 'Other HEMA Chile clubs',
+      },
+      noEncontrada: {
+        titulo: 'Page not found',
+        texto: 'The page you are looking for does not exist or has moved.',
+        volver: 'Go to the home page',
+      },
       menu: {
         etiqueta: 'Main menu',
         mapa: 'Clubs map',
@@ -127,7 +153,7 @@ const resources = {
         camo: 'CAMO',
       },
       camo: {
-        titulo: 'CAMO',
+        titulo: 'CAMO – Western Martial Arts Congress',
         intro: [
           'The Western Martial Arts Congress (CAMO) is the national gathering of the Chilean HEMA community, bringing clubs from across the country together for technical workshops, talks and open sparring.',
           'At the end of its fifth edition, in 2017, the organising clubs founded HEMA Chile. These are the recorded editions, with the talks and activities of each year.',
@@ -190,7 +216,7 @@ const resources = {
         verMapa: 'View on the map',
       },
       reconocimiento: {
-        titulo: 'Sport recognition',
+        titulo: 'Sport recognition for HEMA',
         intro:
           'Representatives of HEMA clubs and HEMA Chile are asking the Chilean Ministry of Sport to recognise HEMA (Historical European Martial Arts) as a sport and to include it in the Official Single List of Sports and Disciplines, under Decree No. 10 of 2021.',
         porQueTitulo: 'Why does it matter?',
@@ -226,6 +252,7 @@ void i18n.use(initReactI18next).init({
 })
 
 i18n.on('languageChanged', (lng) => {
+  if (typeof document === 'undefined') return
   document.documentElement.lang = lng
   try {
     localStorage.setItem('lang', lng)
@@ -233,7 +260,7 @@ i18n.on('languageChanged', (lng) => {
     /* ignorar */
   }
 })
-document.documentElement.lang = i18n.language
+if (typeof document !== 'undefined') document.documentElement.lang = i18n.language
 
 const DIAS: Record<string, string> = {
   Lunes: 'Monday',
