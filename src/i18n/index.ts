@@ -38,7 +38,7 @@ const resources = {
         respaldo:
           'La solicitud cuenta con una carta de apoyo de IFHEMA y fue compartida con los representantes de los clubes de HEMA del país, para que todos puedan sumarse como firmantes.',
         documentoTitulo: 'Documento de la solicitud',
-        documentoNota: 'Versión sin firmas.',
+        documentoNota: 'Versión pública: sin cédulas de identidad, domicilios, correos electrónicos ni firmas de los solicitantes.',
         descargar: 'Descargar PDF',
         abrir: 'Abrir en Google Drive',
       },
@@ -78,7 +78,7 @@ const resources = {
         respaldo:
           'The request is backed by a letter of support from IFHEMA and was shared with the representatives of the HEMA clubs in the country, so that all of them can join as signatories.',
         documentoTitulo: 'Request document (in Spanish)',
-        documentoNota: 'Unsigned version.',
+        documentoNota: 'Public version: without the applicants’ ID numbers, addresses, email addresses or signatures.',
         descargar: 'Download PDF',
         abrir: 'Open in Google Drive',
       },

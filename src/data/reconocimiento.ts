@@ -1,12 +1,13 @@
 /**
- * Documento de la solicitud de reconocimiento de HEMA como modalidad deportiva.
- * Para publicar una nueva versión del PDF, sube el archivo a Google Drive
- * (compartido como "Cualquier persona con el enlace") y reemplaza el ID.
+ * Versión pública de la solicitud de reconocimiento de HEMA como modalidad
+ * deportiva (Google Docs, sin cédulas, domicilios, correos ni firmas).
+ * El documento debe estar compartido como "Cualquier persona con el enlace".
+ * Para publicar otra versión, reemplaza el ID.
  */
-const ID_DRIVE = '12l_YQvP8OBCP0k1O2qd8j1ZUZnutetOv'
+const ID_DOC = '15YULRvrSHPHbnf4vSopFe5CH7uaZm_gdYjrWda4rgVQ'
 
 export const SOLICITUD = {
-  vista: `https://drive.google.com/file/d/${ID_DRIVE}/preview`,
-  abrir: `https://drive.google.com/file/d/${ID_DRIVE}/view`,
-  descargar: `https://drive.google.com/uc?export=download&id=${ID_DRIVE}`,
+  vista: `https://docs.google.com/document/d/${ID_DOC}/preview`,
+  abrir: `https://docs.google.com/document/d/${ID_DOC}/edit?usp=sharing`,
+  descargar: `https://docs.google.com/document/d/${ID_DOC}/export?format=pdf`,
 }

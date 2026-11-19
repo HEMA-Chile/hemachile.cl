@@ -22,7 +22,7 @@ Esta lista alimenta el mapa, la ficha de cada club y los datos para buscadores (
 
 ## Actualizar el PDF de la solicitud
 
-El documento se muestra desde Google Drive. Para cambiarlo, sube el nuevo PDF a Drive, compártelo como *Cualquier persona con el enlace* y reemplaza el ID en [`src/data/reconocimiento.ts`](src/data/reconocimiento.ts). Los textos de la página están en [`src/i18n/index.ts`](src/i18n/index.ts), en la sección `reconocimiento`.
+El documento es la versión pública de la solicitud en Google Docs (sin cédulas, domicilios, correos ni firmas). Debe estar compartido como *Cualquier persona con el enlace*. Para mostrar otra versión, reemplaza el ID en [`src/data/reconocimiento.ts`](src/data/reconocimiento.ts). Los textos de la página están en [`src/i18n/index.ts`](src/i18n/index.ts), en la sección `reconocimiento`.
 
 ## Publicación
 
@@ -54,7 +54,7 @@ public/                  Archivos que se copian tal cual (logos, CNAME)
 src/
   data/clubes.ts         ← Lista de clubes miembros
   data/armas.ts          Catálogo de especialidades (es/en)
-  data/reconocimiento.ts Enlace al PDF de la solicitud (Google Drive)
+  data/reconocimiento.ts Enlace a la versión pública de la solicitud
   router.tsx             Rutas de las páginas y menú
   i18n/                  Textos en español e inglés
   components/            Encabezado, menú, mapa, ficha del club y página de reconocimiento

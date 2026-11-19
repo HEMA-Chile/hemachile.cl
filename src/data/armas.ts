@@ -14,8 +14,8 @@ export const ARMAS = {
   sableMilitar: { es: 'Sable militar', en: 'Military sabre' },
   messer: { es: 'Messer', en: 'Messer' },
   espadin: { es: 'Espadín', en: 'Smallsword' },
-  daga: { es: 'Daga', en: 'Dagger' },
-  bastonDeEsgrima: { es: 'Bastón de esgrima', en: 'Singlestick' },
+  daga: { es: 'Daga de rondel', en: 'Rondel dagger' },
+  bastonDeEsgrima: { es: 'Bastón de esgrima (singlestick)', en: 'Singlestick' },
 } as const
 
 export type Arma = keyof typeof ARMAS
