@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+
+/* El modo oscuro se activa con data-theme="dark" en <html> (ver useTema). */
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html[data-theme='dark'] {
+    color-scheme: dark;
+  }
+  body {
+    @apply min-h-dvh bg-linear-to-b from-white via-[#f3f3f3] to-[#e7e7e7] text-black antialiased;
+    @apply dark:bg-black dark:bg-none dark:text-white;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+}
+
+@utility panel-oscuro {
+  @apply dark:bg-linear-to-b dark:from-black dark:via-[#0d0d0d] dark:to-[#1a1a1a];
+}
+
+/*
+ * Distribución: tres columnas en pantallas grandes (encabezado | mapa | ficha)
+ * y una sola columna apilada en pantallas medianas y móviles.
+ */
+.diseno {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+
+  & > :nth-child(1),
+  & > :nth-child(3) {
+    border-bottom: 1px solid var(--color-gray-300);
+  }
+  & > :nth-child(3) {
+    border-top: 1px solid var(--color-gray-300);
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .diseno {
+    flex-direction: row;
+    height: 100dvh;
+    overflow: hidden;
+
+    & > :nth-child(1) {
+      flex: 0 0 250px;
+      border: none;
+    }
+    & > :nth-child(2) {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    & > :nth-child(3) {
+      flex: 0 0 450px;
+      overflow-y: auto;
+      border: none;
+    }
+  }
+}
+
+[data-theme='dark'] .diseno > * {
+  border-color: var(--color-gray-800);
+}
+
+/* Ícono de grupo de marcadores en el mapa */
+.icono-grupo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, #fff, #f3f3f3, #e7e7e7);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
+  & img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+  & span {
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: var(--color-blue-600);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+}
+
+.mapa {
+  z-index: 0;
+}
