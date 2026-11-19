@@ -1,8 +1,10 @@
 import { useEffect, useState, type AnchorHTMLAttributes, type MouseEvent } from 'react'
+import { CLUBES, type Club } from './data/clubes'
 
 /**
  * Enrutador mínimo con la History API (sin dependencias).
- * Para agregar una página: suma su ruta a RUTAS y su componente en App.tsx.
+ * Para agregar una página: suma su ruta a RUTAS, su componente en App.tsx
+ * y sus metadatos en seo.ts.
  */
 export const RUTAS = {
   reconocimiento: '/',
@@ -11,13 +13,34 @@ export const RUTAS = {
   mapa: '/mapa',
 } as const
 
-export type Ruta = (typeof RUTAS)[keyof typeof RUTAS]
+/** Ruta interna: una de RUTAS, la página de un club (/clubes/<id>) o una desconocida. */
+export type Ruta = string
+
+export const rutaClub = (id: string) => `/clubes/${id}`
+
+export function clubDeRuta(ruta: string): Club | undefined {
+  const m = ruta.match(/^\/clubes\/([^/]+)$/)
+  return m ? CLUBES.find((c) => c.id === m[1]) : undefined
+}
+
+export function rutaConocida(ruta: string) {
+  return (Object.values(RUTAS) as string[]).includes(ruta) || clubDeRuta(ruta) !== undefined
+}
+
+function normalizar(path: string): Ruta {
+  const ruta = path.replace(/\/+$/, '') || '/'
+  // Enlaces antiguos: /reconocimiento ahora es la página principal
+  return ruta === '/reconocimiento' ? RUTAS.reconocimiento : ruta
+}
+
+/** Ruta que se renderiza en el servidor (pre-renderizado), donde no hay window. */
+let rutaServidor: Ruta = RUTAS.reconocimiento
+export function fijarRutaServidor(ruta: Ruta) {
+  rutaServidor = ruta
+}
 
 function rutaActual(): Ruta {
-  const path = window.location.pathname.replace(/\/+$/, '') || '/'
-  // Enlaces antiguos: /reconocimiento ahora es la página principal
-  if (path === '/reconocimiento') return RUTAS.reconocimiento
-  return (Object.values(RUTAS) as string[]).includes(path) ? (path as Ruta) : RUTAS.reconocimiento
+  return typeof window === 'undefined' ? rutaServidor : normalizar(window.location.pathname)
 }
 
 export function navegar(ruta: Ruta) {
@@ -30,8 +53,9 @@ export function navegar(ruta: Ruta) {
 export function useRuta(): Ruta {
   const [ruta, setRuta] = useState<Ruta>(rutaActual)
   useEffect(() => {
-    if (window.location.pathname.replace(/\/+$/, '') === '/reconocimiento') {
-      window.history.replaceState(null, '', RUTAS.reconocimiento)
+    const path = window.location.pathname
+    if (path !== '/' && (path.endsWith('/') || normalizar(path) !== path)) {
+      window.history.replaceState(null, '', normalizar(path) + window.location.search + window.location.hash)
     }
     const alCambiar = () => setRuta(rutaActual())
     window.addEventListener('popstate', alCambiar)

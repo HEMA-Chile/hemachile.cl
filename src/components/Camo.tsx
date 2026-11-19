@@ -26,7 +26,7 @@ export function Camo() {
     <main className="panel-oscuro px-6 py-8 ancho:px-12">
       <article className="mx-auto flex max-w-3xl flex-col gap-6">
         <header className="flex flex-col gap-3">
-          <h2 className="text-3xl font-bold">{t('camo.titulo')}</h2>
+          <h1 className="text-3xl font-bold">{t('camo.titulo')}</h1>
           {intro.map((p) => (
             <p key={p} className="text-lg">
               {p}
@@ -54,14 +54,14 @@ export function Camo() {
                 className="absolute top-7 -left-[33px] h-4 w-4 rounded-full border-2 border-white bg-[#cc2b31] shadow dark:border-black"
               />
               <section className={tarjeta}>
-                <h3 className="text-2xl font-bold">
+                <h2 className="text-2xl font-bold">
                   CAMO {e.anio}
                   {e.numero && (
                     <span className="ml-2 text-base font-normal text-gray-600 dark:text-gray-400">
                       {t('camo.edicion', { numero: e.numero })}
                     </span>
                   )}
-                </h3>
+                </h2>
 
                 {(e.fecha || e.lugar || e.organiza) && (
                   <ul className="mt-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
@@ -90,7 +90,7 @@ export function Camo() {
 
                 {e.actividades.length > 0 && (
                   <div className="mt-5">
-                    <h4 className="mb-2 font-bold">{t('camo.actividades')}</h4>
+                    <h3 className="mb-2 font-bold">{t('camo.actividades')}</h3>
                     {porDia(e.actividades, idioma).map((g) => (
                       <div key={g.dia ?? 'todas'} className="mb-3 last:mb-0">
                         {g.dia && (

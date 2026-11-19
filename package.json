@@ -6,7 +6,7 @@
   "description": "Sitio web de HEMA Chile: mapa de los clubes miembros de esgrima histórica.",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "typecheck": "tsc -b"
   },

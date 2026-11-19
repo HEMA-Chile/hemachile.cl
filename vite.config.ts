@@ -1,5 +1,3 @@
-import { copyFileSync } from 'node:fs'
-import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -12,11 +10,12 @@ function datosEstructurados(): Plugin {
   return {
     name: 'hemachile-json-ld',
     transformIndexHtml(html) {
-      const datos = {
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
+      const organizacion = {
+        '@type': 'SportsOrganization',
+        '@id': `${SITIO}/#organizacion`,
         name: 'HEMA Chile',
-        url: SITIO,
+        url: `${SITIO}/`,
+        sport: 'HEMA (Historical European Martial Arts)',
         logo: `${SITIO}/icons/path1.png`,
         email: 'directorio.hemachile@gmail.com',
         description: 'Agrupación de clubes de esgrima histórica de tradición europea (HEMA) de alcance nacional.',
@@ -24,8 +23,10 @@ function datosEstructurados(): Plugin {
         sameAs: ['https://www.facebook.com/hemachile/', 'https://www.instagram.com/hema_chile_/'],
         member: CLUBES.map((c) => ({
           '@type': 'SportsClub',
+          '@id': `${SITIO}/clubes/${c.id}#club`,
           name: c.nombre,
-          sport: 'HEMA',
+          url: `${SITIO}/clubes/${c.id}`,
+          sport: 'HEMA (Historical European Martial Arts)',
           address: {
             '@type': 'PostalAddress',
             streetAddress: c.direccion,
@@ -38,6 +39,20 @@ function datosEstructurados(): Plugin {
           logo: `${SITIO}${c.icono}`,
         })),
       }
+      const datos = {
+        '@context': 'https://schema.org',
+        '@graph': [
+          organizacion,
+          {
+            '@type': 'WebSite',
+            '@id': `${SITIO}/#sitio`,
+            name: 'HEMA Chile',
+            url: `${SITIO}/`,
+            inLanguage: ['es-CL', 'en'],
+            publisher: { '@id': `${SITIO}/#organizacion` },
+          },
+        ],
+      }
       const json = JSON.stringify(datos, null, 2).replace(/</g, '\\u003c')
       return html.replace(
         '<!--JSON_LD-->',
@@ -47,21 +62,6 @@ function datosEstructurados(): Plugin {
   }
 }
 
-/**
- * GitHub Pages no conoce las rutas de la aplicación (p. ej. /reconocimiento):
- * sirve 404.html, que es una copia de index.html, y React muestra la página.
- */
-function paginaRespaldo(): Plugin {
-  return {
-    name: 'hemachile-404',
-    apply: 'build',
-    closeBundle() {
-      const dist = resolve(import.meta.dirname, 'dist')
-      copyFileSync(resolve(dist, 'index.html'), resolve(dist, '404.html'))
-    },
-  }
-}
-
 export default defineConfig({
-  plugins: [react(), tailwindcss(), datosEstructurados(), paginaRespaldo()],
+  plugins: [react(), tailwindcss(), datosEstructurados()],
 })
