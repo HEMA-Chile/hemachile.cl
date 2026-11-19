@@ -32,15 +32,13 @@ export default function App() {
 
   useEffect(() => {
     document.title =
-      ruta === RUTAS.reconocimiento
-        ? `${t('reconocimiento.titulo')} | HEMA Chile`
-        : TITULO_INICIAL
+      ruta === RUTAS.mapa ? `${t('menu.mapa')} | HEMA Chile` : TITULO_INICIAL
   }, [ruta, t, i18n.language])
 
   return (
     <div className="diseno">
       <Encabezado />
-      {ruta === RUTAS.reconocimiento ? <Reconocimiento /> : <PaginaMapa />}
+      {ruta === RUTAS.mapa ? <PaginaMapa /> : <Reconocimiento />}
     </div>
   )
 }

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { Enlace, RUTAS, useRuta, type Ruta } from '../router'
 
 const ITEMS: { ruta: Ruta; clave: string; Icono: typeof MapPinned }[] = [
-  { ruta: RUTAS.mapa, clave: 'menu.mapa', Icono: MapPinned },
   { ruta: RUTAS.reconocimiento, clave: 'menu.reconocimiento', Icono: Landmark },
+  { ruta: RUTAS.mapa, clave: 'menu.mapa', Icono: MapPinned },
 ]
 
 export function Menu() {

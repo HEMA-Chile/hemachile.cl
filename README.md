@@ -2,8 +2,8 @@
 
 Sitio web de **HEMA Chile**. Tiene dos secciones, a las que se llega desde el menú de la izquierda:
 
-- **Mapa de clubes** (`/`): mapa interactivo de los clubes miembros, con la ficha de cada uno (dirección, horarios, contacto y especialidades).
-- **Reconocimiento deportivo** (`/reconocimiento`): la solicitud de reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte, con el PDF del documento.
+- **Reconocimiento deportivo** (`/`, página principal): la solicitud de reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte, con su versión pública.
+- **Mapa de clubes** (`/mapa`): mapa interactivo de los clubes miembros, con la ficha de cada uno (dirección, horarios, contacto y especialidades).
 
 Está en español e inglés y tiene modo claro y oscuro.
 
