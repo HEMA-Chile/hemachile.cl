@@ -21,6 +21,11 @@ Cada cambio que llega a la rama `main` se compila y publica automáticamente en 
 
 > **Configuración única:** en el repositorio, ir a *Settings → Pages → Build and deployment* y elegir **Source: GitHub Actions**.
 
+## Diseño
+
+- **Tipografía:** [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville) (licencia OFL), incluida en el sitio mediante `@fontsource/libre-baskerville`. Es la misma de los afiches de HEMA Chile.
+- **Fondo:** degradado radial gris con el grabado de esgrima del *Fechtbuch* de Joachim Meyer (1570, dominio público) como marca de agua, igual que en los afiches. La imagen está en `src/assets/grabado-meyer.webp`.
+
 ## Trabajar en local
 
 Requiere Node.js 20 o superior.
