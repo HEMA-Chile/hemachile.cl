@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { CLUBES } from '../data/clubes'
 import { Enlace, RUTAS } from '../router'
 import composicion from '../assets/hema-chile-clubes.webp'
+import { LogoClub } from './LogoClub'
 
 const tarjeta =
   'rounded-2xl bg-white/90 p-6 shadow-md backdrop-blur-sm dark:bg-black/80 dark:shadow-gray-300/20'
@@ -94,7 +95,7 @@ export function HemaChile() {
           <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {CLUBES.map((club) => (
               <li key={club.id} className="flex flex-col items-center gap-2 text-center">
-                <img src={club.icono} alt="" className="h-20 w-20 object-contain" loading="lazy" />
+                <LogoClub club={club} className="h-20 w-20 object-contain" />
                 <span className="text-sm font-bold leading-snug">{club.nombre}</span>
                 <span className="text-xs text-gray-600 dark:text-gray-400">{club.ciudad}</span>
               </li>

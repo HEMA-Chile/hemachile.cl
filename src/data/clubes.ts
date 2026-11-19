@@ -9,6 +9,7 @@ import type { Arma } from './armas'
  *
  * - `id`: identificador corto y único, sin espacios (no cambiarlo después).
  * - `icono`: ruta a un archivo dentro de /public/logos.
+ * - `iconoOscuro` (opcional): logo alternativo para el modo oscuro.
  * - `horarios`: texto libre en español; los días se traducen solos al inglés.
  * - `armas`: claves definidas en ./armas.ts.
  * - `coordenadas`: [latitud, longitud]. En Google Maps: clic derecho sobre
@@ -25,6 +26,8 @@ export interface Club {
   armas: Arma[]
   coordenadas: [number, number]
   icono: string
+  /** Opcional: versión del logo para modo oscuro (p. ej. con texto blanco). */
+  iconoOscuro?: string
 }
 
 export const CLUBES: Club[] = [
@@ -87,6 +90,7 @@ export const CLUBES: Club[] = [
     armas: ['espadaLarga', 'espadaYBroquel', 'sableMilitar', 'messer'],
     coordenadas: [-33.4787483, -70.5999059],
     icono: '/logos/praelium.png',
+    iconoOscuro: '/logos/praelium-blanco.png',
   },
   {
     id: 'valdivia',
