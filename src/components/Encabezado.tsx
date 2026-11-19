@@ -22,7 +22,7 @@ export function Encabezado() {
     <header className="flex flex-wrap justify-between gap-4 p-6 ancho:px-5 panel-oscuro ancho:flex-col ancho:flex-nowrap">
       <div className="flex w-full flex-col gap-6">
         <h1 className="m-0">
-          <Enlace to={RUTAS.mapa} className="inline-block">
+          <Enlace to={RUTAS.reconocimiento} className="inline-block">
             <span className="sr-only">HEMA Chile</span>
             <img src={logo} className="block w-60 dark:hidden" alt="" />
             <img src={logoOscuro} className="hidden w-60 dark:block" alt="" />
