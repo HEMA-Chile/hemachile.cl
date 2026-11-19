@@ -8,6 +8,7 @@ import type { Arma } from './armas'
  * datos estructurados para buscadores (JSON-LD en index.html).
  *
  * - `id`: identificador corto y único, sin espacios (no cambiarlo después).
+ * - `nombreCorto`: cómo aparece el club en la lista junto al mapa.
  * - `icono`: ruta a un archivo dentro de /public/logos.
  * - `iconoOscuro` (opcional): logo alternativo para el modo oscuro.
  * - `horarios`: texto libre en español; los días se traducen solos al inglés.
@@ -18,6 +19,8 @@ import type { Arma } from './armas'
 export interface Club {
   id: string
   nombre: string
+  /** Nombre corto para la lista de clubes junto al mapa. */
+  nombreCorto: string
   ciudad: string
   direccion: string
   horarios: string
@@ -34,6 +37,7 @@ export const CLUBES: Club[] = [
   {
     id: 'aehch',
     nombre: 'Academia de Esgrima Histórica de Chile',
+    nombreCorto: 'AEHCh',
     ciudad: 'Santiago',
     direccion: 'Parroquia La Natividad del Señor, Av. Ossa 479, La Reina',
     horarios: 'Martes 19:00–21:00 / Jueves 19:00–21:00 / Sábado 10:30–13:30',
@@ -46,6 +50,7 @@ export const CLUBES: Club[] = [
   {
     id: 'temuco',
     nombre: 'Esgrima Histórica Temuco',
+    nombreCorto: 'EH Temuco',
     ciudad: 'Temuco',
     direccion: 'Universidad Católica de Temuco, Campus San Francisco',
     horarios: 'Martes 19:00–21:00 / Jueves 19:00–21:00 / Sábado 10:00–12:00',
@@ -58,6 +63,7 @@ export const CLUBES: Club[] = [
   {
     id: 'atacama',
     nombre: 'Esgrima Histórica Atacama',
+    nombreCorto: 'EH Atacama',
     ciudad: 'Copiapó',
     direccion: 'Polideportivo Karen Gallardo Pinto',
     horarios: 'Martes, Jueves y Sábado 20:00–22:00',
@@ -70,6 +76,7 @@ export const CLUBES: Club[] = [
   {
     id: 'puertomontt',
     nombre: 'Academia de Esgrima Histórica Puerto Montt',
+    nombreCorto: 'AEHCh Puerto Montt',
     ciudad: 'Puerto Montt',
     direccion: 'Gimnasio UACh, Campus Pelluco, Los Pinos S/N',
     horarios: 'Lunes y Jueves 19:30–21:30',
@@ -82,6 +89,7 @@ export const CLUBES: Club[] = [
   {
     id: 'praelium',
     nombre: 'Praelium Australis',
+    nombreCorto: 'Praelium Australis',
     ciudad: 'Santiago',
     direccion: 'Canchas Cristo Salva, Av. Macul 2645, Macul',
     horarios: 'Martes 19:00–21:30 / Jueves 19:00–21:30 / Sábado 10:00–13:00',
@@ -95,6 +103,7 @@ export const CLUBES: Club[] = [
   {
     id: 'valdivia',
     nombre: 'Esgrima Histórica Valdivia',
+    nombreCorto: 'EH Valdivia',
     ciudad: 'Valdivia',
     direccion: 'Centro de Jóvenes, Koenig 611',
     horarios: 'Lunes a Viernes 18:00–20:00 / Domingo 15:00–18:00',
@@ -117,6 +126,7 @@ export const CLUBES: Club[] = [
   {
     id: 'virtus',
     nombre: 'Virtus Esgrima Histórica',
+    nombreCorto: 'Virtus',
     ciudad: 'Valparaíso',
     direccion: 'Espacio multifunción Ficus, Independencia 2373',
     horarios: 'Lunes, Jueves y Viernes 18:00–19:30 / Domingo 10:00–12:00',

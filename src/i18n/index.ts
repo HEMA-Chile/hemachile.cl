@@ -17,7 +17,7 @@ const resources = {
         temaOscuro: 'Activar modo oscuro',
         temaClaro: 'Activar modo claro',
       },
-      mapa: { verClub: 'Ver {{nombre}}' },
+      mapa: { verClub: 'Ver {{nombre}}', listaEtiqueta: 'Clubes' },
       menu: {
         etiqueta: 'Menú principal',
         mapa: 'Mapa de clubes',
@@ -84,7 +84,7 @@ const resources = {
         temaOscuro: 'Switch to dark mode',
         temaClaro: 'Switch to light mode',
       },
-      mapa: { verClub: 'View {{nombre}}' },
+      mapa: { verClub: 'View {{nombre}}', listaEtiqueta: 'Clubs' },
       menu: {
         etiqueta: 'Main menu',
         mapa: 'Clubs map',
