@@ -1,3 +1,5 @@
+import { copyFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
@@ -16,7 +18,7 @@ function datosEstructurados(): Plugin {
         name: 'HEMA Chile',
         url: SITIO,
         logo: `${SITIO}/icons/path1.png`,
-        email: 'contacto@hemachile.cl',
+        email: 'directorio.hemachile@gmail.com',
         description: 'Agrupación de clubes de esgrima histórica de tradición europea (HEMA) de alcance nacional.',
         foundingDate: '2017',
         sameAs: ['https://www.facebook.com/hemachile/', 'https://www.instagram.com/hema_chile_/'],
@@ -45,6 +47,21 @@ function datosEstructurados(): Plugin {
   }
 }
 
+/**
+ * GitHub Pages no conoce las rutas de la aplicación (p. ej. /reconocimiento):
+ * sirve 404.html, que es una copia de index.html, y React muestra la página.
+ */
+function paginaRespaldo(): Plugin {
+  return {
+    name: 'hemachile-404',
+    apply: 'build',
+    closeBundle() {
+      const dist = resolve(import.meta.dirname, 'dist')
+      copyFileSync(resolve(dist, 'index.html'), resolve(dist, '404.html'))
+    },
+  }
+}
+
 export default defineConfig({
-  plugins: [react(), tailwindcss(), datosEstructurados()],
+  plugins: [react(), tailwindcss(), datosEstructurados(), paginaRespaldo()],
 })

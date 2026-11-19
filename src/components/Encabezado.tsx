@@ -2,6 +2,8 @@ import { Mail, Moon, Sun } from 'lucide-react'
 import { IconoInstagram } from './IconoInstagram'
 import { useTranslation } from 'react-i18next'
 import { useTema } from '../hooks/useTema'
+import { Menu } from './Menu'
+import { Enlace, RUTAS } from '../router'
 import logo from '../assets/logo-hema.png'
 import logoOscuro from '../assets/logo-hema-negro.png'
 import banderaEs from '../assets/flag-es.svg'
@@ -17,14 +19,19 @@ export function Encabezado() {
   const esEspanol = i18n.language === 'es'
 
   return (
-    <header className="flex flex-wrap justify-between gap-4 p-6 panel-oscuro lg:flex-col lg:flex-nowrap">
-      <h1 className="m-0">
-        <span className="sr-only">HEMA Chile</span>
-        <img src={logo} className="block w-60 dark:hidden" alt="" />
-        <img src={logoOscuro} className="hidden w-60 dark:block" alt="" />
-      </h1>
+    <header className="flex flex-wrap justify-between gap-4 p-6 ancho:px-5 panel-oscuro ancho:flex-col ancho:flex-nowrap">
+      <div className="flex w-full flex-col gap-6">
+        <h1 className="m-0">
+          <Enlace to={RUTAS.mapa} className="inline-block">
+            <span className="sr-only">HEMA Chile</span>
+            <img src={logo} className="block w-60 dark:hidden" alt="" />
+            <img src={logoOscuro} className="hidden w-60 dark:block" alt="" />
+          </Enlace>
+        </h1>
+        <Menu />
+      </div>
 
-      <div className="flex flex-col items-start justify-center gap-3">
+      <div className="flex min-w-0 flex-col items-start justify-center gap-3 text-sm">
         <div className="flex w-full items-center justify-center gap-3 pb-2">
           <button
             type="button"
@@ -55,9 +62,9 @@ export function Encabezado() {
           <IconoInstagram size={18} />
           <strong>@hema_chile_</strong>
         </a>
-        <a href="mailto:contacto@hemachile.cl" className="flex items-center gap-2 hover:underline">
+        <a href="mailto:directorio.hemachile@gmail.com" className="flex max-w-full items-center gap-2 hover:underline">
           <Mail size={18} aria-hidden />
-          <span className="truncate">contacto@hemachile.cl</span>
+          <span className="truncate">directorio.hemachile@gmail.com</span>
         </a>
       </div>
     </header>

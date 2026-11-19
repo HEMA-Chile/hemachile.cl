@@ -1,6 +1,11 @@
 # hemachile.cl
 
-Sitio web de **HEMA Chile**: un mapa interactivo de los clubes miembros, con la ficha de cada club (dirección, horarios, contacto y armas que practica). Está en español e inglés y tiene modo claro y oscuro.
+Sitio web de **HEMA Chile**. Tiene dos secciones, a las que se llega desde el menú de la izquierda:
+
+- **Mapa de clubes** (`/`): mapa interactivo de los clubes miembros, con la ficha de cada uno (dirección, horarios, contacto y especialidades).
+- **Reconocimiento deportivo** (`/reconocimiento`): la solicitud de reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte, con el PDF del documento.
+
+Está en español e inglés y tiene modo claro y oscuro.
 
 Hecho con [Vite](https://vite.dev), [React](https://react.dev) y TypeScript, [Tailwind CSS](https://tailwindcss.com), [Leaflet](https://leafletjs.com)/OpenStreetMap e [i18next](https://www.i18next.com).
 
@@ -15,11 +20,20 @@ Toda la información de los clubes está en un solo archivo: **[`src/data/clubes
 
 Esta lista alimenta el mapa, la ficha de cada club y los datos para buscadores (JSON-LD), así que no hay que tocar nada más. Los cambios se pueden hacer directamente desde la web de GitHub (botón ✏️ sobre el archivo).
 
+## Actualizar el PDF de la solicitud
+
+El documento es la versión pública de la solicitud en Google Docs (sin cédulas, domicilios, correos ni firmas). Debe estar compartido como *Cualquier persona con el enlace*. Para mostrar otra versión, reemplaza el ID en [`src/data/reconocimiento.ts`](src/data/reconocimiento.ts). Los textos de la página están en [`src/i18n/index.ts`](src/i18n/index.ts), en la sección `reconocimiento`.
+
 ## Publicación
 
 Cada cambio que llega a la rama `main` se compila y publica automáticamente en GitHub Pages ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)). El dominio `hemachile.cl` se configura con [`public/CNAME`](public/CNAME).
 
 > **Configuración única:** en el repositorio, ir a *Settings → Pages → Build and deployment* y elegir **Source: GitHub Actions**.
+
+## Diseño
+
+- **Tipografía:** [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville) (licencia OFL), incluida en el sitio mediante `@fontsource/libre-baskerville`. Es la misma de los afiches de HEMA Chile.
+- **Fondo:** degradado radial gris con el grabado de esgrima del *Fechtbuch* de Joachim Meyer (1570, dominio público) como marca de agua, igual que en los afiches. La imagen está en `src/assets/grabado-meyer.webp`.
 
 ## Trabajar en local
 
@@ -40,8 +54,10 @@ public/                  Archivos que se copian tal cual (logos, CNAME)
 src/
   data/clubes.ts         ← Lista de clubes miembros
   data/armas.ts          Catálogo de especialidades (es/en)
+  data/reconocimiento.ts Enlace a la versión pública de la solicitud
+  router.tsx             Rutas de las páginas y menú
   i18n/                  Textos en español e inglés
-  components/            Encabezado, mapa y ficha del club
+  components/            Encabezado, menú, mapa, ficha del club y página de reconocimiento
   hooks/useTema.ts       Modo claro/oscuro
   index.css              Estilos (Tailwind) y distribución de la página
 vite.config.ts           Configuración y generación del JSON-LD

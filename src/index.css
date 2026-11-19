@@ -1,7 +1,17 @@
 @import 'tailwindcss';
+@import '@fontsource/libre-baskerville/400.css';
+@import '@fontsource/libre-baskerville/400-italic.css';
+@import '@fontsource/libre-baskerville/700.css';
 
 /* El modo oscuro se activa con data-theme="dark" en <html> (ver useTema). */
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Tipografía institucional (la misma de los afiches de HEMA Chile) */
+@theme {
+  --font-sans: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  /* Punto en que la página pasa de una columna a tres (ver .diseno) */
+  --breakpoint-ancho: 1400px;
+}
 
 @layer base {
   html {
@@ -10,12 +20,50 @@
   html[data-theme='dark'] {
     color-scheme: dark;
   }
+
+  /*
+   * Fondo de los afiches de HEMA Chile: degradado radial gris claro con el
+   * grabado de Joachim Meyer (Fechtbuch, 1570) como marca de agua inclinada.
+   */
   body {
-    @apply min-h-dvh bg-linear-to-b from-white via-[#f3f3f3] to-[#e7e7e7] text-black antialiased;
-    @apply dark:bg-black dark:bg-none dark:text-white;
-    transition:
-      background-color 0.3s,
-      color 0.3s;
+    @apply min-h-dvh text-black antialiased dark:text-white;
+    background: radial-gradient(
+        ellipse 80% 70% at 50% 50%,
+        #ffffff 0%,
+        #efefef 47%,
+        #dfdfdf 75%,
+        #c7c7c7 100%
+      )
+      fixed;
+  }
+  html[data-theme='dark'] body {
+    background: radial-gradient(
+        ellipse 80% 70% at 50% 50%,
+        #1f1f1f 0%,
+        #141414 47%,
+        #0b0b0b 75%,
+        #000000 100%
+      )
+      fixed;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+    background: url('./assets/grabado-meyer.webp') center / cover no-repeat;
+    transform: skewY(-11deg) scale(1.1);
+    opacity: 0.09;
+    mix-blend-mode: multiply;
+  }
+  html[data-theme='dark'] body::before {
+    filter: invert(1);
+    mix-blend-mode: screen;
+    opacity: 0.07;
+  }
+  #root {
+    isolation: isolate;
   }
   p {
     text-wrap: pretty;
@@ -27,8 +75,9 @@
   }
 }
 
+/* Los paneles quedan transparentes para que se vea el fondo de la página. */
 @utility panel-oscuro {
-  @apply dark:bg-linear-to-b dark:from-black dark:via-[#0d0d0d] dark:to-[#1a1a1a];
+  background: transparent;
 }
 
 /*
@@ -57,14 +106,15 @@
     overflow: hidden;
 
     & > :nth-child(1) {
-      flex: 0 0 250px;
+      flex: 0 0 320px;
+      min-width: 0;
       border: none;
     }
     & > :nth-child(2) {
       flex: 1;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      overflow-y: auto;
     }
     & > :nth-child(3) {
       flex: 0 0 450px;
