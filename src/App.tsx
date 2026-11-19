@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { CLUBES, type Club } from './data/clubes'
 import { Encabezado } from './components/Encabezado'
 import { MapaClubes } from './components/MapaClubes'
+import { ListaClubes } from './components/ListaClubes'
 import { FichaClub } from './components/FichaClub'
 import { Reconocimiento } from './components/Reconocimiento'
 import { HemaChile } from './components/HemaChile'
@@ -13,13 +14,22 @@ const TITULO_INICIAL = document.title
 function PaginaMapa() {
   const { t } = useTranslation()
   const [club, setClub] = useState<Club | undefined>(CLUBES[0])
+  const [volar, setVolar] = useState(0)
+
+  const elegirDesdeLista = (c: Club) => {
+    setClub(c)
+    setVolar((n) => n + 1)
+  }
 
   return (
     <>
-      <main className="p-8 panel-oscuro">
-        <section className="flex h-full flex-col items-center justify-center">
-          <h2 className="mb-4 text-center text-3xl font-bold">{t('title')}</h2>
-          <MapaClubes seleccionado={club} onSeleccionar={setClub} />
+      <main className="p-6 panel-oscuro ancho:p-8">
+        <section className="flex h-full flex-col gap-4">
+          <h2 className="text-center text-3xl font-bold">{t('title')}</h2>
+          <ListaClubes seleccionado={club} onSeleccionar={elegirDesdeLista} />
+          <div className="min-h-0 flex-1">
+            <MapaClubes seleccionado={club} volar={volar} onSeleccionar={setClub} />
+          </div>
         </section>
       </main>
       {club && <FichaClub club={club} />}
