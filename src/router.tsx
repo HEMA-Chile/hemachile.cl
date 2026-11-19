@@ -7,6 +7,7 @@ import { useEffect, useState, type AnchorHTMLAttributes, type MouseEvent } from 
 export const RUTAS = {
   reconocimiento: '/',
   hemaChile: '/hema-chile',
+  camo: '/camo',
   mapa: '/mapa',
 } as const
 

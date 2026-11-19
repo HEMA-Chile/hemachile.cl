@@ -7,6 +7,7 @@ import { ListaClubes } from './components/ListaClubes'
 import { FichaClub } from './components/FichaClub'
 import { Reconocimiento } from './components/Reconocimiento'
 import { HemaChile } from './components/HemaChile'
+import { Camo } from './components/Camo'
 import { RUTAS, useRuta } from './router'
 
 const TITULO_INICIAL = document.title
@@ -47,7 +48,9 @@ export default function App() {
         ? `${t('menu.mapa')} | HEMA Chile`
         : ruta === RUTAS.hemaChile
           ? `${t('menu.hemaChile')} | HEMA Chile`
-          : TITULO_INICIAL
+          : ruta === RUTAS.camo
+            ? `${t('menu.camo')} | HEMA Chile`
+            : TITULO_INICIAL
   }, [ruta, t, i18n.language])
 
   return (
@@ -57,6 +60,8 @@ export default function App() {
         <PaginaMapa />
       ) : ruta === RUTAS.hemaChile ? (
         <HemaChile />
+      ) : ruta === RUTAS.camo ? (
+        <Camo />
       ) : (
         <Reconocimiento />
       )}

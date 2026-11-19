@@ -23,6 +23,19 @@ const resources = {
         mapa: 'Mapa de clubes',
         reconocimiento: 'Reconocimiento deportivo',
         hemaChile: '¿Qué es HEMA Chile?',
+        camo: 'CAMO',
+      },
+      camo: {
+        titulo: 'CAMO',
+        intro: [
+          'El Congreso de Artes Marciales Occidentales (CAMO) es el encuentro nacional de la comunidad chilena de HEMA: reúne a clubes de todo el país en talleres técnicos, charlas y sparring libre entre clubes.',
+          'Al término de su quinta edición, en 2017, los clubes organizadores fundaron HEMA Chile. Estas son las ediciones de las que hay registro, con las charlas y actividades de cada año.',
+        ],
+        ediciones: 'Ediciones',
+        edicion: '{{numero}} edición',
+        organiza: 'Organiza',
+        actividades: 'Charlas y talleres',
+        nota: '¿Tienes información o fotos de ediciones anteriores? Escríbenos a directorio.hemachile@gmail.com.',
       },
       hemaChile: {
         titulo: '¿Qué es HEMA Chile?',
@@ -90,6 +103,19 @@ const resources = {
         mapa: 'Clubs map',
         reconocimiento: 'Sport recognition',
         hemaChile: 'About HEMA Chile',
+        camo: 'CAMO',
+      },
+      camo: {
+        titulo: 'CAMO',
+        intro: [
+          'The Western Martial Arts Congress (CAMO) is the national gathering of the Chilean HEMA community, bringing clubs from across the country together for technical workshops, talks and open sparring.',
+          'At the end of its fifth edition, in 2017, the organising clubs founded HEMA Chile. These are the recorded editions, with the talks and activities of each year.',
+        ],
+        ediciones: 'Editions',
+        edicion: 'Edition {{numero}}',
+        organiza: 'Organised by',
+        actividades: 'Talks and workshops',
+        nota: 'Do you have information or photos from earlier editions? Write to us at directorio.hemachile@gmail.com.',
       },
       hemaChile: {
         titulo: 'About HEMA Chile',
