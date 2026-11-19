@@ -1,17 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { CLUBES, type Club } from './data/clubes'
 import { Encabezado } from './components/Encabezado'
 import { MapaClubes } from './components/MapaClubes'
 import { FichaClub } from './components/FichaClub'
+import { Reconocimiento } from './components/Reconocimiento'
+import { RUTAS, useRuta } from './router'
 
-export default function App() {
+const TITULO_INICIAL = document.title
+
+function PaginaMapa() {
   const { t } = useTranslation()
   const [club, setClub] = useState<Club | undefined>(CLUBES[0])
 
   return (
-    <div className="diseno">
-      <Encabezado />
+    <>
       <main className="p-8 panel-oscuro">
         <section className="flex h-full flex-col items-center justify-center">
           <h2 className="mb-4 text-center text-3xl font-bold">{t('title')}</h2>
@@ -19,6 +22,25 @@ export default function App() {
         </section>
       </main>
       {club && <FichaClub club={club} />}
+    </>
+  )
+}
+
+export default function App() {
+  const { t, i18n } = useTranslation()
+  const ruta = useRuta()
+
+  useEffect(() => {
+    document.title =
+      ruta === RUTAS.reconocimiento
+        ? `${t('reconocimiento.titulo')} | HEMA Chile`
+        : TITULO_INICIAL
+  }, [ruta, t, i18n.language])
+
+  return (
+    <div className="diseno">
+      <Encabezado />
+      {ruta === RUTAS.reconocimiento ? <Reconocimiento /> : <PaginaMapa />}
     </div>
   )
 }

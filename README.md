@@ -1,6 +1,11 @@
 # hemachile.cl
 
-Sitio web de **HEMA Chile**: un mapa interactivo de los clubes miembros, con la ficha de cada club (dirección, horarios, contacto y armas que practica). Está en español e inglés y tiene modo claro y oscuro.
+Sitio web de **HEMA Chile**. Tiene dos secciones, a las que se llega desde el menú de la izquierda:
+
+- **Mapa de clubes** (`/`): mapa interactivo de los clubes miembros, con la ficha de cada uno (dirección, horarios, contacto y especialidades).
+- **Reconocimiento deportivo** (`/reconocimiento`): la solicitud de reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte, con el PDF del documento.
+
+Está en español e inglés y tiene modo claro y oscuro.
 
 Hecho con [Vite](https://vite.dev), [React](https://react.dev) y TypeScript, [Tailwind CSS](https://tailwindcss.com), [Leaflet](https://leafletjs.com)/OpenStreetMap e [i18next](https://www.i18next.com).
 
@@ -14,6 +19,10 @@ Toda la información de los clubes está en un solo archivo: **[`src/data/clubes
 - **Horarios:** se escriben en español; los días se traducen solos al inglés.
 
 Esta lista alimenta el mapa, la ficha de cada club y los datos para buscadores (JSON-LD), así que no hay que tocar nada más. Los cambios se pueden hacer directamente desde la web de GitHub (botón ✏️ sobre el archivo).
+
+## Actualizar el PDF de la solicitud
+
+El documento se muestra desde Google Drive. Para cambiarlo, sube el nuevo PDF a Drive, compártelo como *Cualquier persona con el enlace* y reemplaza el ID en [`src/data/reconocimiento.ts`](src/data/reconocimiento.ts). Los textos de la página están en [`src/i18n/index.ts`](src/i18n/index.ts), en la sección `reconocimiento`.
 
 ## Publicación
 
@@ -45,8 +54,10 @@ public/                  Archivos que se copian tal cual (logos, CNAME)
 src/
   data/clubes.ts         ← Lista de clubes miembros
   data/armas.ts          Catálogo de especialidades (es/en)
+  data/reconocimiento.ts Enlace al PDF de la solicitud (Google Drive)
+  router.tsx             Rutas de las páginas y menú
   i18n/                  Textos en español e inglés
-  components/            Encabezado, mapa y ficha del club
+  components/            Encabezado, menú, mapa, ficha del club y página de reconocimiento
   hooks/useTema.ts       Modo claro/oscuro
   index.css              Estilos (Tailwind) y distribución de la página
 vite.config.ts           Configuración y generación del JSON-LD

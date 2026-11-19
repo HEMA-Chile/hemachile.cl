@@ -9,6 +9,8 @@
 /* Tipografía institucional (la misma de los afiches de HEMA Chile) */
 @theme {
   --font-sans: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  /* Punto en que la página pasa de una columna a tres (ver .diseno) */
+  --breakpoint-ancho: 1400px;
 }
 
 @layer base {
@@ -104,14 +106,15 @@
     overflow: hidden;
 
     & > :nth-child(1) {
-      flex: 0 0 250px;
+      flex: 0 0 320px;
+      min-width: 0;
       border: none;
     }
     & > :nth-child(2) {
       flex: 1;
       display: flex;
       flex-direction: column;
-      overflow: hidden;
+      overflow-y: auto;
     }
     & > :nth-child(3) {
       flex: 0 0 450px;
