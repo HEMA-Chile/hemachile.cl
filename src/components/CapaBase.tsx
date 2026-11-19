@@ -26,10 +26,15 @@ export function CapaBase({ tema }: { tema: Tema }) {
     let cancelado = false
 
     void (async () => {
-      await Promise.all([
+      const [maplibre, { default: urlWorker }] = await Promise.all([
+        import('maplibre-gl'),
+        import('maplibre-gl/dist/maplibre-gl-worker.mjs?url'),
         import('maplibre-gl/dist/maplibre-gl.css'),
-        import('@maplibre/maplibre-gl-leaflet'),
       ])
+      // MapLibre busca su worker junto a su propio archivo; con Vite hay que
+      // indicarle dónde queda después de compilar.
+      maplibre.setWorkerUrl(urlWorker)
+      await import('@maplibre/maplibre-gl-leaflet')
       if (cancelado) return
       capa = L.maplibreGL({ style: ESTILOS[tema], attributionControl: false })
       capa.getAttribution = () => ATRIBUCION
