@@ -1,4 +1,4 @@
-import { Compass, Eye, HeartHandshake, MapPinned } from 'lucide-react'
+import { ArrowRight, Compass, Eye, HeartHandshake, MapPinned } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { CLUBES } from '../data/clubes'
 import { Enlace, RUTAS } from '../router'
@@ -12,8 +12,11 @@ export function HemaChile() {
   const { t } = useTranslation()
   const intro = t('hemaChile.intro', { returnObjects: true }) as string[]
   const valores = t('hemaChile.valores', { returnObjects: true }) as string[]
-  const actividades = t('hemaChile.actividades', { returnObjects: true }) as string[]
-  const organizacion = t('hemaChile.organizacion', { returnObjects: true }) as string[]
+  const actividades = t('hemaChile.actividades', { returnObjects: true }) as {
+    titulo: string
+    texto: string
+    enlace?: 'camo' | 'reconocimiento'
+  }[]
 
   return (
     <main className="panel-oscuro px-6 py-8 ancho:px-12">
@@ -72,20 +75,23 @@ export function HemaChile() {
           </ul>
         </section>
 
-        <section className={tarjeta}>
-          <h3 className="mb-3 text-xl font-bold">{t('hemaChile.actividadesTitulo')}</h3>
-          <ul className="list-inside list-disc space-y-2">
+        <section>
+          <h3 className="mb-4 text-2xl font-bold">{t('hemaChile.actividadesTitulo')}</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
             {actividades.map((a) => (
-              <li key={a}>{a}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className={tarjeta}>
-          <h3 className="mb-3 text-xl font-bold">{t('hemaChile.organizacionTitulo')}</h3>
-          <div className="space-y-3">
-            {organizacion.map((p) => (
-              <p key={p}>{p}</p>
+              <section key={a.titulo} className={`${tarjeta} flex flex-col`}>
+                <h4 className="mb-2 text-lg font-bold">{a.titulo}</h4>
+                <p className="flex-1">{a.texto}</p>
+                {a.enlace && (
+                  <Enlace
+                    to={RUTAS[a.enlace]}
+                    className="mt-3 inline-flex items-center gap-1 font-bold text-[#cc2b31] hover:underline"
+                  >
+                    {t('hemaChile.verMas')}
+                    <ArrowRight size={16} aria-hidden />
+                  </Enlace>
+                )}
+              </section>
             ))}
           </div>
         </section>
