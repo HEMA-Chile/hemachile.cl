@@ -53,17 +53,38 @@ const resources = {
         valores: ['Colaboración', 'Rigurosidad', 'Respeto', 'Seguridad', 'Humildad', 'Compromiso'],
         actividadesTitulo: 'Qué hacemos',
         actividades: [
-          'Reunimos a los clubes en charlas, seminarios y capacitaciones de reglamento y arbitraje.',
-          'Coordinamos un calendario de torneos y actividades entre los clubes, y organizamos el Torneo de Novatos.',
-          'Buscamos que la práctica de HEMA en Chile tenga bases técnicas, competitivas, reglamentarias y de seguridad comunes.',
-          'Impulsamos el reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte, paso previo para formar una federación deportiva.',
-          'Mantenemos el vínculo con la International Federation of Historical European Martial Arts (IFHEMA), donde Chile participa como observador desde 2025.',
+          {
+            titulo: 'CAMO',
+            texto: 'Junto con los clubes, impulsamos el Congreso de Artes Marciales Occidentales, el encuentro nacional de la comunidad, con talleres, charlas y sparring libre entre clubes. La edición 2026 se hizo en Puerto Montt con representantes de siete ciudades.',
+            enlace: 'camo',
+          },
+          {
+            titulo: 'Torneo de Novatos',
+            texto: 'Organizamos un torneo para quienes empiezan: mayores de 16 años, con menos de dos años de entrenamiento y sin torneos abiertos fuera de su club. La primera edición fue en 2025 y la segunda, el 3 y 4 de octubre de 2026 en Santiago, con espada larga, sable militar, espada ropera y espada y broquel, y simuladores de Technyl provistos por la organización.',
+          },
+          {
+            titulo: 'HEMA sale a la calle',
+            texto: 'El 22 y 23 de agosto de 2026, como parte del evento mundial «HEMA goes public» de IFHEMA, siete clubes hicieron demostraciones abiertas y gratuitas en parques y plazas de seis ciudades, de Copiapó a Puerto Montt, donde el público pudo probar ejercicios básicos con simuladores.',
+          },
+          {
+            titulo: 'Reconocimiento deportivo',
+            texto: 'Impulsamos la solicitud para que el Ministerio del Deporte reconozca HEMA como modalidad deportiva, abierta a la firma de todos los clubes, y presentamos en el CAMO 2026 la hoja de ruta hacia una federación deportiva de HEMA.',
+            enlace: 'reconocimiento',
+          },
+          {
+            titulo: 'Vínculo internacional',
+            texto: 'Representamos a Chile como observador ante la International Federation of Historical European Martial Arts (IFHEMA) desde 2025. En su Asamblea General de septiembre de 2025 presentamos el estado de la disciplina en el país.',
+          },
+          {
+            titulo: 'Reglas y arbitraje',
+            texto: 'Hacemos capacitaciones de reglamento y arbitraje, propusimos un reglamento tipo de torneo y mantenemos un registro de las agrupaciones de HEMA del país, integren o no HEMA Chile.',
+          },
+          {
+            titulo: 'Encuentro Iberoamericano (2021)',
+            texto: 'En julio de 2021 organizamos en formato virtual el Encuentro Iberoamericano de Esgrima Histórica, con 16 expositores de Chile y el extranjero en catorce ponencias sobre formación de instructores, preparación física, salud, estudio de fuentes y difusión.',
+          },
         ],
-        organizacionTitulo: 'Cómo nos organizamos',
-        organizacion: [
-          'HEMA Chile se rige por sus Estatutos de Afiliación, Participación y Pertenencia. La Asamblea General es su primera autoridad: cada agrupación tiene hasta dos representantes y un voto.',
-          'La Asamblea elige por un año a un Directorio de seis miembros (presidencia, vicepresidencia, secretaría, subsecretaría, tesorería y subtesorería). Existen además una Comisión Fiscalizadora de Finanzas, una Comisión Electoral y una Comisión de Disciplina, que se ajusta a las normas del debido proceso.',
-        ],
+        verMas: 'Ver más',
         clubesTitulo: 'Clubes miembros',
         verMapa: 'Ver en el mapa',
       },
@@ -133,17 +154,38 @@ const resources = {
         valores: ['Collaboration', 'Rigour', 'Respect', 'Safety', 'Humility', 'Commitment'],
         actividadesTitulo: 'What we do',
         actividades: [
-          'We bring clubs together in talks, seminars and training on rules and refereeing.',
-          'We coordinate a calendar of tournaments and activities among the clubs, and organise the Novice Tournament.',
-          'We work towards common technical, competitive, regulatory and safety foundations for HEMA in Chile.',
-          'We are pursuing the recognition of HEMA as a sport by the Ministry of Sport, the step required before founding a national federation.',
-          'We maintain the link with the International Federation of Historical European Martial Arts (IFHEMA), where Chile has been an observer since 2025.',
+          {
+            titulo: 'CAMO',
+            texto: 'Together with the clubs, we run the Western Martial Arts Congress, the national gathering of the community, with workshops, talks and open sparring between clubs. The 2026 edition took place in Puerto Montt with representatives from seven cities.',
+            enlace: 'camo',
+          },
+          {
+            titulo: 'Novice Tournament',
+            texto: 'We organise a tournament for newcomers: over 16, with less than two years of training and no open tournaments outside their club. The first edition was in 2025 and the second on 3–4 October 2026 in Santiago, with longsword, military sabre, rapier and sword and buckler, using Technyl simulators provided by the organisers.',
+          },
+          {
+            titulo: 'HEMA goes public',
+            texto: 'On 22–23 August 2026, as part of IFHEMA’s worldwide “HEMA goes public” event, seven clubs gave free, open demonstrations in parks and squares in six cities, from Copiapó to Puerto Montt, where the public could try basic drills with simulators.',
+          },
+          {
+            titulo: 'Sport recognition',
+            texto: 'We are leading the request for the Ministry of Sport to recognise HEMA as a sport, open for every club to sign, and at CAMO 2026 we presented the roadmap towards a national HEMA federation.',
+            enlace: 'reconocimiento',
+          },
+          {
+            titulo: 'International ties',
+            texto: 'We represent Chile as an observer at the International Federation of Historical European Martial Arts (IFHEMA) since 2025. At its General Assembly in September 2025 we presented the state of the discipline in the country.',
+          },
+          {
+            titulo: 'Rules and refereeing',
+            texto: 'We run training on rules and refereeing, have proposed a model tournament ruleset and keep a register of the HEMA clubs in the country, whether or not they belong to HEMA Chile.',
+          },
+          {
+            titulo: 'Ibero-American Meeting (2021)',
+            texto: 'In July 2021 we organised the online Ibero-American Historical Fencing Meeting, with 16 speakers from Chile and abroad giving fourteen talks on instructor training, physical preparation, health, source study and outreach.',
+          },
         ],
-        organizacionTitulo: 'How we are organised',
-        organizacion: [
-          'HEMA Chile is governed by its Statutes of Affiliation, Participation and Membership. The General Assembly is its highest authority: each club has up to two representatives and one vote.',
-          'The Assembly elects a six-member Board for one year (president, vice-president, secretary, deputy secretary, treasurer and deputy treasurer). There is also a Finance Oversight Committee, an Electoral Committee and a Disciplinary Committee, which follows due-process rules.',
-        ],
+        verMas: 'Learn more',
         clubesTitulo: 'Member clubs',
         verMapa: 'View on the map',
       },
