@@ -1,21 +1,14 @@
 import { useEffect, useMemo, useRef } from 'react'
-import { MapContainer, Marker, TileLayer, Tooltip, useMap } from 'react-leaflet'
+import { MapContainer, Marker, Tooltip, useMap } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-cluster'
 import L from 'leaflet'
 import { useTranslation } from 'react-i18next'
 import { CLUBES, type Club } from '../data/clubes'
 import { useTemaActual } from '../hooks/useTemaActual'
+import { CapaBase } from './CapaBase'
 
 import 'leaflet/dist/leaflet.css'
 import 'react-leaflet-cluster/dist/assets/MarkerCluster.css'
-
-/** Mapas base de CARTO (sobre datos de OpenStreetMap): claro y oscuro. */
-const TILES = {
-  light: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-}
-const ATRIBUCION =
-  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
 
 /** Zoom al que se ve un club por separado (los de Santiago están a ~3 km). */
 const ZOOM_CLUB = 14
@@ -88,8 +81,9 @@ export function MapaClubes({ seleccionado, volar, onSeleccionar }: Props) {
       className="mapa h-full min-h-[60vh] w-full rounded-2xl shadow-md"
       scrollWheelZoom
       zoomControl
+      maxZoom={18}
     >
-      <TileLayer key={tema} url={TILES[tema]} attribution={ATRIBUCION} maxZoom={19} />
+      <CapaBase tema={tema} />
       <ControlVista club={seleccionado} volar={volar} />
       <MarkerClusterGroup
         iconCreateFunction={iconoGrupo}
