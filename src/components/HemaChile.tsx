@@ -1,0 +1,114 @@
+import { Compass, Eye, HeartHandshake, MapPinned } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { CLUBES } from '../data/clubes'
+import { Enlace, RUTAS } from '../router'
+import composicion from '../assets/hema-chile-clubes.webp'
+
+const tarjeta =
+  'rounded-2xl bg-white/90 p-6 shadow-md backdrop-blur-sm dark:bg-black/80 dark:shadow-gray-300/20'
+
+export function HemaChile() {
+  const { t } = useTranslation()
+  const intro = t('hemaChile.intro', { returnObjects: true }) as string[]
+  const valores = t('hemaChile.valores', { returnObjects: true }) as string[]
+  const actividades = t('hemaChile.actividades', { returnObjects: true }) as string[]
+  const organizacion = t('hemaChile.organizacion', { returnObjects: true }) as string[]
+
+  return (
+    <main className="panel-oscuro px-6 py-8 ancho:px-12">
+      <article className="mx-auto flex max-w-3xl flex-col gap-6">
+        <header className="flex flex-col gap-3">
+          <h2 className="text-3xl font-bold">{t('hemaChile.titulo')}</h2>
+        </header>
+
+        <figure className="mx-auto w-full max-w-md rounded-3xl p-4 dark:bg-[radial-gradient(ellipse_at_center,#ffffff_0%,#efefef_55%,#dfdfdf_100%)]">
+          <img
+            src={composicion}
+            alt={t('hemaChile.imagenAlt')}
+            className="h-auto w-full"
+            width={1061}
+            height={1100}
+          />
+        </figure>
+
+        <section className="space-y-3 text-lg">
+          {intro.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </section>
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          <section className={tarjeta}>
+            <h3 className="mb-3 flex items-center gap-2 text-xl font-bold">
+              <Compass size={22} aria-hidden />
+              {t('hemaChile.misionTitulo')}
+            </h3>
+            <p className="italic">«{t('hemaChile.mision')}»</p>
+          </section>
+          <section className={tarjeta}>
+            <h3 className="mb-3 flex items-center gap-2 text-xl font-bold">
+              <Eye size={22} aria-hidden />
+              {t('hemaChile.visionTitulo')}
+            </h3>
+            <p className="italic">«{t('hemaChile.vision')}»</p>
+          </section>
+        </div>
+
+        <section className={tarjeta}>
+          <h3 className="mb-3 flex items-center gap-2 text-xl font-bold">
+            <HeartHandshake size={22} aria-hidden />
+            {t('hemaChile.valoresTitulo')}
+          </h3>
+          <ul className="flex flex-wrap gap-2">
+            {valores.map((v) => (
+              <li
+                key={v}
+                className="rounded-full border border-gray-300 px-4 py-1 dark:border-gray-700"
+              >
+                {v}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={tarjeta}>
+          <h3 className="mb-3 text-xl font-bold">{t('hemaChile.actividadesTitulo')}</h3>
+          <ul className="list-inside list-disc space-y-2">
+            {actividades.map((a) => (
+              <li key={a}>{a}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className={tarjeta}>
+          <h3 className="mb-3 text-xl font-bold">{t('hemaChile.organizacionTitulo')}</h3>
+          <div className="space-y-3">
+            {organizacion.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+          </div>
+        </section>
+
+        <section className={tarjeta}>
+          <h3 className="mb-4 text-xl font-bold">{t('hemaChile.clubesTitulo')}</h3>
+          <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            {CLUBES.map((club) => (
+              <li key={club.id} className="flex flex-col items-center gap-2 text-center">
+                <img src={club.icono} alt="" className="h-20 w-20 object-contain" loading="lazy" />
+                <span className="text-sm font-bold leading-snug">{club.nombre}</span>
+                <span className="text-xs text-gray-600 dark:text-gray-400">{club.ciudad}</span>
+              </li>
+            ))}
+          </ul>
+          <Enlace
+            to={RUTAS.mapa}
+            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-black px-4 py-2 font-bold text-white shadow-sm hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200"
+          >
+            <MapPinned size={18} aria-hidden />
+            {t('hemaChile.verMapa')}
+          </Enlace>
+        </section>
+      </article>
+    </main>
+  )
+}

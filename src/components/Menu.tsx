@@ -1,9 +1,10 @@
-import { Landmark, MapPinned } from 'lucide-react'
+import { Landmark, MapPinned, Users } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Enlace, RUTAS, useRuta, type Ruta } from '../router'
 
 const ITEMS: { ruta: Ruta; clave: string; Icono: typeof MapPinned }[] = [
   { ruta: RUTAS.reconocimiento, clave: 'menu.reconocimiento', Icono: Landmark },
+  { ruta: RUTAS.hemaChile, clave: 'menu.hemaChile', Icono: Users },
   { ruta: RUTAS.mapa, clave: 'menu.mapa', Icono: MapPinned },
 ]
 
