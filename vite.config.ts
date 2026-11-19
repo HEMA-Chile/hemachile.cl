@@ -17,7 +17,7 @@ function datosEstructurados(): Plugin {
         url: SITIO,
         logo: `${SITIO}/icons/path1.png`,
         email: 'contacto@hemachile.cl',
-        description: 'Agrupación de clubes de esgrima histórica (HEMA) en Chile.',
+        description: 'Agrupación de clubes de esgrima histórica de tradición europea (HEMA) de alcance nacional.',
         foundingDate: '2017',
         sameAs: ['https://www.facebook.com/hemachile/', 'https://www.instagram.com/hema_chile_/'],
         member: CLUBES.map((c) => ({

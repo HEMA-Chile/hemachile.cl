@@ -10,7 +10,7 @@ Toda la información de los clubes está en un solo archivo: **[`src/data/clubes
 
 - **Agregar un club:** copia uno de los bloques `{ ... }` de la lista, cambia sus datos y pon su logo en `public/icons/`.
 - **Quitar un club:** borra su bloque de la lista (y su logo de `public/icons/` si ya no se usa).
-- **Armas:** usa las claves de [`src/data/armas.ts`](src/data/armas.ts) (`espadaLarga`, `sableMilitar`, etc.). Si falta un arma, agrégala ahí con su nombre en español e inglés.
+- **Especialidades:** usa las claves de [`src/data/armas.ts`](src/data/armas.ts) (`espadaLarga`, `sableMilitar`, etc.), que corresponden a las 11 especialidades de la solicitud de reconocimiento ante el Mindep.
 - **Horarios:** se escriben en español; los días se traducen solos al inglés.
 
 Esta lista alimenta el mapa, la ficha de cada club y los datos para buscadores (JSON-LD), así que no hay que tocar nada más. Los cambios se pueden hacer directamente desde la web de GitHub (botón ✏️ sobre el archivo).
@@ -39,7 +39,7 @@ index.html               Página base, metadatos y SEO
 public/                  Archivos que se copian tal cual (logos, CNAME)
 src/
   data/clubes.ts         ← Lista de clubes miembros
-  data/armas.ts          Catálogo de armas (es/en)
+  data/armas.ts          Catálogo de especialidades (es/en)
   i18n/                  Textos en español e inglés
   components/            Encabezado, mapa y ficha del club
   hooks/useTema.ts       Modo claro/oscuro

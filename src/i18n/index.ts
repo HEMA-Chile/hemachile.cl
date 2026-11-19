@@ -10,7 +10,7 @@ const resources = {
       labels: {
         direccion: 'Dirección',
         horarios: 'Horarios',
-        armas: 'Armas practicadas',
+        armas: 'Especialidades',
       },
       button: {
         idioma: 'Cambiar a inglés',
@@ -26,7 +26,7 @@ const resources = {
       labels: {
         direccion: 'Address',
         horarios: 'Schedule',
-        armas: 'Weapons practiced',
+        armas: 'Disciplines',
       },
       button: {
         idioma: 'Switch to Spanish',
