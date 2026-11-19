@@ -81,7 +81,7 @@ export const CLUBES: Club[] = [
     nombre: 'Praelium Australis',
     ciudad: 'Santiago',
     direccion: 'Canchas Cristo Salva, Av. Macul 2645, Macul',
-    horarios: 'Martes 19:30–21:30 / Jueves 19:30–21:30 / Sábado 10:00–12:00',
+    horarios: 'Martes 19:00–21:30 / Jueves 19:00–21:30 / Sábado 10:00–13:00',
     instagram: 'praelium_australis',
     correo: 'praeliumaustralis@gmail.com',
     armas: ['espadaLarga', 'espadaYBroquel', 'sableMilitar', 'messer'],
