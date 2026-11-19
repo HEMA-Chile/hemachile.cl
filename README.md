@@ -1,9 +1,10 @@
 # hemachile.cl
 
-Sitio web de **HEMA Chile**. Tiene dos secciones, a las que se llega desde el menú de la izquierda:
+Sitio web de **HEMA Chile**. Tiene tres secciones, a las que se llega desde el menú de la izquierda:
 
-- **Mapa de clubes** (`/`): mapa interactivo de los clubes miembros, con la ficha de cada uno (dirección, horarios, contacto y especialidades).
-- **Reconocimiento deportivo** (`/reconocimiento`): la solicitud de reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte, con el PDF del documento.
+- **Reconocimiento deportivo** (`/`, página principal): la solicitud de reconocimiento de HEMA como modalidad deportiva ante el Ministerio del Deporte.
+- **¿Qué es HEMA Chile?** (`/hema-chile`): misión, visión, valores, organización y clubes miembros.
+- **Mapa de clubes** (`/mapa`): mapa interactivo de los clubes miembros, con la ficha de cada uno (dirección, horarios, contacto y especialidades).
 
 Está en español e inglés y tiene modo claro y oscuro.
 
@@ -13,16 +14,12 @@ Hecho con [Vite](https://vite.dev), [React](https://react.dev) y TypeScript, [Ta
 
 Toda la información de los clubes está en un solo archivo: **[`src/data/clubes.ts`](src/data/clubes.ts)**.
 
-- **Agregar un club:** copia uno de los bloques `{ ... }` de la lista, cambia sus datos y pon su logo en `public/icons/`.
-- **Quitar un club:** borra su bloque de la lista (y su logo de `public/icons/` si ya no se usa).
+- **Agregar un club:** copia uno de los bloques `{ ... }` de la lista, cambia sus datos y pon su logo en `public/logos/`.
+- **Quitar un club:** borra su bloque de la lista (y su logo de `public/logos/` si ya no se usa).
 - **Especialidades:** usa las claves de [`src/data/armas.ts`](src/data/armas.ts) (`espadaLarga`, `sableMilitar`, etc.), que corresponden a las 11 especialidades de la solicitud de reconocimiento ante el Mindep.
 - **Horarios:** se escriben en español; los días se traducen solos al inglés.
 
 Esta lista alimenta el mapa, la ficha de cada club y los datos para buscadores (JSON-LD), así que no hay que tocar nada más. Los cambios se pueden hacer directamente desde la web de GitHub (botón ✏️ sobre el archivo).
-
-## Actualizar el PDF de la solicitud
-
-El documento es la versión pública de la solicitud en Google Docs (sin cédulas, domicilios, correos ni firmas). Debe estar compartido como *Cualquier persona con el enlace*. Para mostrar otra versión, reemplaza el ID en [`src/data/reconocimiento.ts`](src/data/reconocimiento.ts). Los textos de la página están en [`src/i18n/index.ts`](src/i18n/index.ts), en la sección `reconocimiento`.
 
 ## Publicación
 
@@ -50,11 +47,10 @@ npm run preview   # sirve la versión compilada
 
 ```
 index.html               Página base, metadatos y SEO
-public/                  Archivos que se copian tal cual (logos, CNAME)
+public/                  Archivos que se copian tal cual (logos de clubes en public/logos, íconos, CNAME)
 src/
   data/clubes.ts         ← Lista de clubes miembros
   data/armas.ts          Catálogo de especialidades (es/en)
-  data/reconocimiento.ts Enlace a la versión pública de la solicitud
   router.tsx             Rutas de las páginas y menú
   i18n/                  Textos en español e inglés
   components/            Encabezado, menú, mapa, ficha del club y página de reconocimiento

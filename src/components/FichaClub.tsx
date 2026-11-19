@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { ARMAS } from '../data/armas'
 import type { Club } from '../data/clubes'
 import { traducirHorario, type Idioma } from '../i18n'
+import { LogoClub } from './LogoClub'
 
 export function FichaClub({ club }: { club: Club }) {
   const { t, i18n } = useTranslation()
@@ -16,7 +17,7 @@ export function FichaClub({ club }: { club: Club }) {
         className="flex w-full max-w-md flex-col gap-6 rounded-2xl bg-white p-6 shadow-md dark:bg-black dark:text-white dark:shadow-gray-300/30"
       >
         <header className="flex flex-col items-center gap-3 text-center">
-          <img src={club.icono} alt="" className="h-24 w-24 object-contain" />
+          <LogoClub club={club} className="h-24 w-24 object-contain" />
           <h2 className="text-2xl font-bold">{club.nombre}</h2>
         </header>
 

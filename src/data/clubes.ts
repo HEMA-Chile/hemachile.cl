@@ -8,7 +8,8 @@ import type { Arma } from './armas'
  * datos estructurados para buscadores (JSON-LD en index.html).
  *
  * - `id`: identificador corto y único, sin espacios (no cambiarlo después).
- * - `icono`: ruta a un archivo dentro de /public/icons.
+ * - `icono`: ruta a un archivo dentro de /public/logos.
+ * - `iconoOscuro` (opcional): logo alternativo para el modo oscuro.
  * - `horarios`: texto libre en español; los días se traducen solos al inglés.
  * - `armas`: claves definidas en ./armas.ts.
  * - `coordenadas`: [latitud, longitud]. En Google Maps: clic derecho sobre
@@ -25,6 +26,8 @@ export interface Club {
   armas: Arma[]
   coordenadas: [number, number]
   icono: string
+  /** Opcional: versión del logo para modo oscuro (p. ej. con texto blanco). */
+  iconoOscuro?: string
 }
 
 export const CLUBES: Club[] = [
@@ -38,7 +41,7 @@ export const CLUBES: Club[] = [
     correo: 'contacto.aehch@gmail.com',
     armas: ['espadaLarga', 'espadaRopera', 'sableMilitar', 'espadaYBroquel'],
     coordenadas: [-33.44887276248483, -70.5709466653343],
-    icono: '/icons/logo2019-neutral.png',
+    icono: '/logos/aehch.png',
   },
   {
     id: 'temuco',
@@ -50,7 +53,7 @@ export const CLUBES: Club[] = [
     correo: 'esgrima.tco@gmail.com',
     armas: ['espadaLarga', 'roperaYAcompanante', 'sableMilitar'],
     coordenadas: [-38.73727663660915, -72.60186173242595],
-    icono: '/icons/logo-esgrima-en-negro.png',
+    icono: '/logos/temuco.png',
   },
   {
     id: 'atacama',
@@ -62,7 +65,7 @@ export const CLUBES: Club[] = [
     correo: 'esgrima.historica.atacama@gmail.com',
     armas: ['espadaLarga', 'espadaYBroquel', 'sableMilitar'],
     coordenadas: [-27.37620767651673, -70.33100019157655],
-    icono: '/icons/Esgrima-Historica-Atacama-Vectorizado.png',
+    icono: '/logos/atacama.png',
   },
   {
     id: 'puertomontt',
@@ -74,7 +77,7 @@ export const CLUBES: Club[] = [
     correo: 'esgrimahistoricapuertomontt@gmail.com',
     armas: ['espadaLarga', 'espadaRopera', 'espadaYBroquel', 'sableMilitar'],
     coordenadas: [-41.49131103334241, -72.89700574500337],
-    icono: '/icons/Escudo-AEHCH-PM-2.svg',
+    icono: '/logos/aehch-pm.png',
   },
   {
     id: 'praelium',
@@ -86,7 +89,8 @@ export const CLUBES: Club[] = [
     correo: 'praeliumaustralis@gmail.com',
     armas: ['espadaLarga', 'espadaYBroquel', 'sableMilitar', 'messer'],
     coordenadas: [-33.4787483, -70.5999059],
-    icono: '/icons/logo_big_name.svg',
+    icono: '/logos/praelium.png',
+    iconoOscuro: '/logos/praelium-blanco.png',
   },
   {
     id: 'valdivia',
@@ -108,7 +112,7 @@ export const CLUBES: Club[] = [
       'daga',
     ],
     coordenadas: [-39.83615719834062, -73.2282757050703],
-    icono: '/icons/valdivia.png',
+    icono: '/logos/valdivia.png',
   },
   {
     id: 'virtus',
@@ -120,6 +124,6 @@ export const CLUBES: Club[] = [
     correo: 'virtus.esgrima.historica@gmail.com',
     armas: ['espadaLarga', 'espadaRopera', 'espadaYBroquel', 'sableMilitar', 'daga'],
     coordenadas: [-33.01758715430043, -71.56026017418841],
-    icono: '/icons/VIRTUS.png',
+    icono: '/logos/virtus.png',
   },
 ]
