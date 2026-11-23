@@ -76,8 +76,10 @@ const DIBUJOS: Record<Silueta, { alto: number; dibujo: ReactNode }> = {
     alto: 32,
     dibujo: (
       <g>
-        <ellipse cx={3} cy={16} rx={2.7} ry={2.2} />
-        <path d="M5.4,14.5 L28,14.9 L28,17.1 L5.4,17.5 Z" />
+        {/* pomo en forma de pera */}
+        <path d="M7.6,14.9 C6.2,14.5 4.8,13.6 3.2,13.7 C0.5,13.9 0.5,18.1 3.2,18.3 C4.8,18.4 6.2,17.5 7.6,17.1 Z" />
+        {/* mango: más grueso hacia la guarda, se afina hacia el pomo */}
+        <path d="M7.4,14.9 L18,14.45 L28,14.6 L28,17.4 L18,17.55 L7.4,17.1 Z" />
         <rect x={28} y={3} width={1.2} height={26} rx={0.6} />
         {/* schilt: ensanche de la hoja junto a la guarda */}
         <path d="M29.2,13.3 L34,13.3 L36.2,15 L36.2,17 L34,18.7 L29.2,18.7 Z" />
