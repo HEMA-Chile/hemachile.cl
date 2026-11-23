@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Swords } from 'lucide-react'
+import { ArrowRight, Globe, Mail, Swords } from 'lucide-react'
 import { IconoInstagram } from './IconoInstagram'
 import { useTranslation } from 'react-i18next'
 import { ARMAS } from '../data/armas'
@@ -33,8 +33,16 @@ export function FichaClub({ club }: { club: Club }) {
           </p>
         </section>
 
-        {(club.instagram || club.correo) && (
+        {(club.web || club.instagram || club.correo) && (
           <section className="space-y-2 text-gray-700 dark:text-white">
+            {club.web && (
+              <p className="flex items-center gap-2">
+                <Globe size={20} aria-hidden />
+                <a href={club.web} target="_blank" rel="noopener" className="break-all hover:underline">
+                  {club.web.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                </a>
+              </p>
+            )}
             {club.instagram && (
               <p className="flex items-center gap-2">
                 <IconoInstagram size={20} />
