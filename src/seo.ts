@@ -103,6 +103,17 @@ export function metaDeRuta(ruta: string, idioma: Idioma = 'es'): MetaPagina {
         ruta,
         indexable: true,
       }
+    case RUTAS.ifhema:
+      return {
+        titulo: es
+          ? 'IFHEMA y Chile: federación internacional de HEMA'
+          : 'IFHEMA and Chile: the international HEMA federation',
+        descripcion: es
+          ? 'Qué es IFHEMA, la federación internacional de HEMA, quiénes la integran y por qué Chile participa como observador desde 2025.'
+          : 'What IFHEMA, the international HEMA federation, is, who its members are and why Chile has been an observer since 2025.',
+        ruta,
+        indexable: true,
+      }
     case RUTAS.mapa:
       return {
         titulo: es
@@ -135,6 +146,7 @@ export const RUTAS_INDEXABLES: string[] = [
   RUTAS.reconocimiento,
   RUTAS.hemaChile,
   RUTAS.camo,
+  RUTAS.ifhema,
   RUTAS.mapa,
   ...CLUBES.map((c) => rutaClub(c.id)),
 ]
