@@ -160,6 +160,9 @@ export function QueEsHema() {
               </p>
             </div>
           </div>
+          <p className="max-w-2xl text-sm text-gray-700 italic dark:text-gray-300">
+            {t('hema.armasNota')}
+          </p>
         </section>
 
         {/* ¿Punto o no? */}

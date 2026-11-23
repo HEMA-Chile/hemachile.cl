@@ -139,11 +139,17 @@ const DIBUJOS: Record<Silueta, { alto: number; dibujo: ReactNode }> = {
     alto: 32,
     dibujo: (
       <g>
-        <rect x={2.4} y={14.8} width={13} height={2.4} rx={0.8} />
-        {/* cazoleta */}
-        <path d="M15.6,17 C15.6,28 2,27.4 2.4,17 Z" fillOpacity={0.5} />
-        <path d="M15.6,13 L15.6,17 C15.6,28 2,27.4 2.4,17" {...trazo} />
-        <path d="M15.4,14.6 Q60,14 99.4,10.8 Q101,11.6 100.2,13 Q60,17.6 15.4,17.6 Z" />
+        {/* empuñadura inclinada, con monterilla */}
+        <path d="M14.6,14.5 L5.2,15.5 C3.2,15.8 2,16.9 2.2,18.2 L2.6,19.6 L14.6,17.7 Z" />
+        {/* gavilán trasero */}
+        <rect x={14.4} y={11.6} width={1.3} height={6.4} rx={0.6} />
+        {/* cazoleta: ancha junto a la hoja, se cierra en el pomo */}
+        <path
+          fillRule="evenodd"
+          d="M15.7,17 C16.2,24.8 10.6,27.4 6.2,24.6 C3.9,23.1 2.7,21.2 2.4,19.2 L14.4,17.2 Z M12.6,19.3 C12.2,22.6 9.2,23.9 6.9,22.5 C5.7,21.7 4.9,20.9 4.6,20.3 Z"
+        />
+        {/* hoja de curvatura leve, que se afina hacia una punta roma */}
+        <path d="M15.4,14.7 C45,14.7 75,13.7 98.4,10.7 Q100.2,10.7 99.9,12.1 C76,15.5 45,17.3 15.4,17.3 Z" />
       </g>
     ),
   },
@@ -151,9 +157,11 @@ const DIBUJOS: Record<Silueta, { alto: number; dibujo: ReactNode }> = {
     alto: 32,
     dibujo: (
       <g>
-        <path d="M0.6,17.6 L2,14.6 L20,14.9 L20,17.1 L2.4,18.4 Z" />
-        <rect x={20} y={7} width={1} height={18} rx={0.5} />
-        <path d="M21,14 L88,14.3 L97.6,17 Q97.8,18.1 96,18.1 Q60,18.4 21,18 Z" />
+        {/* empuñadura de cachas con pomo en pico hacia el filo */}
+        <path d="M21,14.7 L8,14.9 C5.2,15 3.2,14.7 1.6,14.2 L1.2,18.7 C2.1,19.5 3.5,19.4 4.5,18.7 L8,17.6 L21,17.4 Z" />
+        <rect x={20.8} y={6} width={1.1} height={20} rx={0.55} />
+        {/* hoja de un filo, apenas curva, con el lomo recortado hacia la punta */}
+        <path d="M21.8,14.3 C45,14.2 70,14 88,13.5 L97.4,15.3 Q98.7,16 97.4,16.5 Q90,17.9 70,17.8 L21.8,17.9 Z" />
       </g>
     ),
   },
