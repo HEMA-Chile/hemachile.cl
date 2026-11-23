@@ -10,7 +10,7 @@ export const ARMAS = {
   roperaYDaga: { es: 'Espada ropera y daga', en: 'Rapier and dagger' },
   roperaYAcompanante: { es: 'Espada ropera y acompañante', en: 'Rapier and companion' },
   espadaYBroquel: { es: 'Espada y broquel', en: 'Sword and buckler' },
-  espadaDeLado: { es: 'Espada de lado', en: 'Sidesword' },
+  espadaDeLado: { es: 'Espada de lado (sidesword)', en: 'Sidesword' },
   sableMilitar: { es: 'Sable militar', en: 'Military sabre' },
   messer: { es: 'Messer', en: 'Messer' },
   espadin: { es: 'Espadín', en: 'Smallsword' },

@@ -98,7 +98,7 @@ export const ARMAS_HISTORICAS: ArmaHistorica[] = [
     siglos: { es: 'Siglo XVI', en: '16th century' },
     manos: { es: 'Una mano', en: 'One hand' },
     texto: {
-      es: 'También llamada sidesword. Corta y estoca por igual, con anillos que protegen los dedos.',
+      es: 'Corta y estoca por igual, con anillos que protegen los dedos.',
       en: 'Cuts and thrusts equally well, with rings that protect the fingers.',
     },
     fuentes: 'Marozzo, Manciolino',
