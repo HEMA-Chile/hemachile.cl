@@ -1,8 +1,9 @@
 # hemachile.cl
 
-Sitio web de **HEMA Chile**. Tiene cinco secciones, a las que se llega desde el menú de la izquierda, más una página por club:
+Sitio web de **HEMA Chile**. Tiene seis secciones, a las que se llega desde el menú de la izquierda, más una página por club:
 
 - **Reconocimiento deportivo** (`/`, página principal): la solicitud de reconocimiento de HEMA como modalidad deportiva presentada ante el Ministerio del Deporte, con su documento en versión pública ([`src/data/reconocimiento.ts`](src/data/reconocimiento.ts)).
+- **¿Qué es HEMA?** (`/que-es-hema`): explicación interactiva de la disciplina (armas a escala en una línea de tiempo, «¿punto o no?», protección y mitos). Contenido en [`src/data/hema.ts`](src/data/hema.ts).
 - **¿Qué es HEMA Chile?** (`/hema-chile`): misión, visión, valores, qué hace y clubes miembros.
 - **IFHEMA** (`/ifhema`): qué es la federación internacional y por qué Chile participa como observador. Los miembros y observadores se editan en [`src/data/ifhema.ts`](src/data/ifhema.ts).
 - **CAMO** (`/camo`): ediciones del Congreso de Artes Marciales Occidentales, con las charlas y actividades de cada año. Se editan en [`src/data/camo.ts`](src/data/camo.ts).

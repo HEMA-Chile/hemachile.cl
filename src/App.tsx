@@ -8,6 +8,7 @@ import { Reconocimiento } from './components/Reconocimiento'
 import { HemaChile } from './components/HemaChile'
 import { Camo } from './components/Camo'
 import { Ifhema } from './components/Ifhema'
+import { QueEsHema } from './components/QueEsHema'
 import { PaginaClub } from './components/PaginaClub'
 import { NoEncontrada } from './components/NoEncontrada'
 import { useMetaPagina } from './hooks/useMetaPagina'
@@ -63,6 +64,8 @@ export default function App() {
       <Encabezado />
       {ruta === RUTAS.mapa ? (
         <PaginaMapa />
+      ) : ruta === RUTAS.hema ? (
+        <QueEsHema />
       ) : ruta === RUTAS.hemaChile ? (
         <HemaChile />
       ) : ruta === RUTAS.camo ? (
