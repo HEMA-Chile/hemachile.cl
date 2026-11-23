@@ -81,7 +81,7 @@ const resources = {
           },
           {
             titulo: 'Reconocimiento deportivo',
-            texto: 'Impulsamos la solicitud para que el Ministerio del Deporte reconozca HEMA como modalidad deportiva, abierta a la firma de todos los clubes, y presentamos en el CAMO 2026 la hoja de ruta hacia una federación deportiva de HEMA.',
+            texto: 'En noviembre de 2026 presentamos, junto a representantes de 14 clubes de todo el país, la solicitud para que el Ministerio del Deporte reconozca HEMA como modalidad deportiva. En el CAMO 2026 presentamos además la hoja de ruta hacia una federación deportiva de HEMA.',
             enlace: 'reconocimiento',
           },
           {
@@ -104,7 +104,7 @@ const resources = {
       reconocimiento: {
         titulo: 'Reconocimiento deportivo de HEMA',
         intro:
-          'Representantes de clubes de HEMA y HEMA Chile solicitan al Ministerio del Deporte que HEMA (Historical European Martial Arts), la esgrima histórica de tradición europea, sea reconocida como modalidad deportiva e inscrita en el Listado Oficial Único de Modalidades y Especialidades Deportivas, conforme al Decreto N° 10 de 2021.',
+          'El 23 de noviembre de 2026, representantes de 14 clubes de HEMA y HEMA Chile presentaron al Ministerio del Deporte una solicitud para que HEMA (Historical European Martial Arts), la esgrima histórica de tradición europea, sea reconocida como modalidad deportiva e inscrita en el Listado Oficial Único de Modalidades y Especialidades Deportivas, conforme al Decreto N° 10 de 2021.',
         porQueTitulo: '¿Por qué es importante?',
         porQue: [
           'El reconocimiento es el requisito legal para que HEMA sea considerada formalmente un deporte en Chile. Permitiría a los clubes constituirse como organizaciones deportivas de HEMA y postular a los fondos y programas de la Ley del Deporte (Ley N° 19.712).',
@@ -114,7 +114,12 @@ const resources = {
         especialidadesTitulo: 'Especialidades solicitadas',
         respaldoTitulo: 'Respaldo',
         respaldo:
-          'La solicitud cuenta con una carta de apoyo de IFHEMA y fue compartida con los representantes de los clubes de HEMA del país, para que todos puedan sumarse como firmantes.',
+          'La firman representantes de 14 clubes de HEMA de Atacama a Los Lagos: los siete que integran HEMA Chile y siete agrupaciones no afiliadas que se sumaron. Cuenta además con una carta de apoyo de IFHEMA.',
+        documentoTitulo: 'Documento de la solicitud',
+        documentoNota:
+          'Versión pública: sin cédulas de identidad, domicilios, correos personales ni firmas de los solicitantes.',
+        descargar: 'Descargar PDF',
+        abrir: 'Abrir en Google Docs',
       },
     },
   },
@@ -195,7 +200,7 @@ const resources = {
           },
           {
             titulo: 'Sport recognition',
-            texto: 'We are leading the request for the Ministry of Sport to recognise HEMA as a sport, open for every club to sign, and at CAMO 2026 we presented the roadmap towards a national HEMA federation.',
+            texto: 'In November 2026, together with representatives of 14 clubs from across the country, we submitted the request for the Ministry of Sport to recognise HEMA as a sport. At CAMO 2026 we also presented the roadmap towards a national HEMA federation.',
             enlace: 'reconocimiento',
           },
           {
@@ -218,7 +223,7 @@ const resources = {
       reconocimiento: {
         titulo: 'Sport recognition for HEMA',
         intro:
-          'Representatives of HEMA clubs and HEMA Chile are asking the Chilean Ministry of Sport to recognise HEMA (Historical European Martial Arts) as a sport and to include it in the Official Single List of Sports and Disciplines, under Decree No. 10 of 2021.',
+          'On 23 November 2026, representatives of 14 HEMA clubs and HEMA Chile submitted a request to the Chilean Ministry of Sport to recognise HEMA (Historical European Martial Arts) as a sport and to include it in the Official Single List of Sports and Disciplines, under Decree No. 10 of 2021.',
         porQueTitulo: 'Why does it matter?',
         porQue: [
           'Recognition is the legal requirement for HEMA to be formally considered a sport in Chile. It would allow clubs to register as HEMA sports organisations and apply for the funds and programmes of the Sports Act (Law No. 19,712).',
@@ -228,7 +233,12 @@ const resources = {
         especialidadesTitulo: 'Disciplines requested',
         respaldoTitulo: 'Support',
         respaldo:
-          'The request is backed by a letter of support from IFHEMA and was shared with the representatives of the HEMA clubs in the country, so that all of them can join as signatories.',
+          'It is signed by representatives of 14 HEMA clubs from Atacama to Los Lagos: the seven members of HEMA Chile and seven non-member clubs that joined. It is also backed by a letter of support from IFHEMA.',
+        documentoTitulo: 'The request document',
+        documentoNota:
+          'Public version (in Spanish): without the applicants’ ID numbers, addresses, personal emails or signatures.',
+        descargar: 'Download PDF',
+        abrir: 'Open in Google Docs',
       },
     },
   },

@@ -1,8 +1,12 @@
+import { Download, ExternalLink } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ARMAS, type Arma } from '../data/armas'
+import { SOLICITUD } from '../data/reconocimiento'
 
 const tarjeta =
   'rounded-2xl bg-white/90 p-6 shadow-md backdrop-blur-sm dark:bg-black/80 dark:shadow-gray-300/20'
+const boton =
+  'inline-flex items-center gap-2 rounded-xl px-4 py-2 font-bold shadow-sm transition-colors'
 
 export function Reconocimiento() {
   const { t, i18n } = useTranslation()
@@ -40,6 +44,36 @@ export function Reconocimiento() {
           <p>{t('reconocimiento.respaldo')}</p>
         </section>
 
+        <section id="documento" className={tarjeta}>
+          <h2 className="mb-1 text-xl font-bold">{t('reconocimiento.documentoTitulo')}</h2>
+          <p className="mb-4 text-gray-700 italic dark:text-gray-300">
+            {t('reconocimiento.documentoNota')}
+          </p>
+          <div className="mb-4 flex flex-wrap gap-3">
+            <a
+              href={SOLICITUD.descargar}
+              className={`${boton} bg-black text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200`}
+            >
+              <Download size={18} aria-hidden />
+              {t('reconocimiento.descargar')}
+            </a>
+            <a
+              href={SOLICITUD.abrir}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${boton} border border-gray-300 bg-white hover:bg-gray-100 dark:border-gray-700 dark:bg-black dark:hover:bg-gray-900`}
+            >
+              <ExternalLink size={18} aria-hidden />
+              {t('reconocimiento.abrir')}
+            </a>
+          </div>
+          <iframe
+            src={SOLICITUD.vista}
+            title={t('reconocimiento.documentoTitulo')}
+            loading="lazy"
+            className="h-[75vh] w-full rounded-xl border border-gray-300 bg-white dark:border-gray-700"
+          />
+        </section>
       </article>
     </main>
   )

@@ -76,8 +76,8 @@ export function metaDeRuta(ruta: string, idioma: Idioma = 'es'): MetaPagina {
           ? 'HEMA Chile – Esgrima histórica y reconocimiento deportivo'
           : 'HEMA Chile – Historical fencing and sport recognition',
         descripcion: es
-          ? 'Clubes de HEMA y HEMA Chile solicitan al Ministerio del Deporte reconocer la esgrima histórica europea (HEMA) como modalidad deportiva en Chile.'
-          : 'HEMA clubs and HEMA Chile ask the Chilean Ministry of Sport to recognise historical European martial arts (HEMA) as a sport.',
+          ? 'Representantes de 14 clubes y HEMA Chile solicitaron al Ministerio del Deporte reconocer la esgrima histórica europea (HEMA) como deporte. Lee la solicitud.'
+          : 'Representatives of 14 clubs and HEMA Chile have asked the Chilean Ministry of Sport to recognise historical European martial arts (HEMA) as a sport.',
         ruta,
         indexable: true,
       }
