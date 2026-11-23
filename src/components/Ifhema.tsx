@@ -1,4 +1,4 @@
-import { ExternalLink, Trophy } from "lucide-react";
+import { Check, ExternalLink } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import logoIfhema from "../assets/ifhema.webp";
 import { IFHEMA, PAISES_MIEMBROS, PAISES_OBSERVADORES } from "../data/ifhema";
@@ -13,8 +13,12 @@ const pildora =
 export function Ifhema() {
   const { t, i18n } = useTranslation();
   const idioma = i18n.language === "en" ? "en" : "es";
-  const lista = (clave: string) =>
-    t(clave, { returnObjects: true }) as string[];
+  const ruta = t("ifhema.ruta", { returnObjects: true }) as {
+    titulo: string;
+    texto: string;
+    hecho: boolean;
+  }[];
+  const objetivos = t("ifhema.objetivos", { returnObjects: true }) as string[];
 
   return (
     <main className="panel-oscuro px-6 py-8 ancho:px-12">
@@ -33,16 +37,48 @@ export function Ifhema() {
           </div>
         </header>
 
-        <section className={`${tarjeta} border-l-4 border-[#cc2b31]`}>
-          <h2 className="mb-3 text-xl font-bold">{t("ifhema.chileTitulo")}</h2>
-          <div className="space-y-3">
-            {lista("ifhema.chile").map((p) => (
-              <p key={p}>{p}</p>
+        <section className={tarjeta}>
+          <h2 className="mb-5 text-xl font-bold">{t("ifhema.rutaTitulo")}</h2>
+          <ol className="grid gap-5 sm:grid-cols-4 sm:gap-3">
+            {ruta.map((paso, i) => (
+              <li key={paso.titulo} className="relative flex gap-3 sm:flex-col">
+                {/* línea que une los pasos */}
+                {i < ruta.length - 1 && (
+                  <span
+                    aria-hidden
+                    className={
+                      "absolute top-9 left-[17px] h-[calc(100%-1rem)] w-0.5 sm:top-[17px] sm:left-9 sm:h-0.5 sm:w-[calc(100%-1.5rem)] " +
+                      (ruta[i + 1].hecho
+                        ? "bg-[#cc2b31]"
+                        : "bg-gray-300 dark:bg-gray-700")
+                    }
+                  />
+                )}
+                <span
+                  className={
+                    "flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 font-bold " +
+                    (paso.hecho
+                      ? "border-[#cc2b31] bg-[#cc2b31] text-white"
+                      : "border-gray-400 text-gray-500 dark:border-gray-600 dark:text-gray-400")
+                  }
+                >
+                  {paso.hecho ? <Check size={18} aria-hidden /> : i + 1}
+                  <span className="sr-only">
+                    {t(paso.hecho ? "ifhema.hecho" : "ifhema.pendiente")}
+                  </span>
+                </span>
+                <div>
+                  <h3 className="font-bold leading-snug">{paso.titulo}</h3>
+                  <p className="mt-1 text-sm text-gray-700 dark:text-gray-300">
+                    {paso.texto}
+                  </p>
+                </div>
+              </li>
             ))}
-          </div>
+          </ol>
           <Enlace
             to={RUTAS.reconocimiento}
-            className="mt-4 inline-block font-bold text-[#cc2b31] hover:underline"
+            className="mt-5 inline-block font-bold text-[#cc2b31] hover:underline"
           >
             {t("ifhema.verSolicitud")}
           </Enlace>
@@ -50,35 +86,15 @@ export function Ifhema() {
 
         <section className={tarjeta}>
           <h2 className="mb-3 text-xl font-bold">{t("ifhema.queEsTitulo")}</h2>
-          <div className="space-y-3">
-            {lista("ifhema.queEs").map((p) => (
-              <p key={p}>{p}</p>
+          <p>{t("ifhema.queEs")}</p>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {objetivos.map((o) => (
+              <li key={o} className={pildora}>
+                {o}
+              </li>
             ))}
-          </div>
+          </ul>
         </section>
-
-        <div className="grid gap-6 sm:grid-cols-2">
-          <section className={tarjeta}>
-            <h2 className="mb-3 text-xl font-bold">
-              {t("ifhema.objetivosTitulo")}
-            </h2>
-            <ul className="list-inside list-disc space-y-1">
-              {lista("ifhema.objetivos").map((o) => (
-                <li key={o}>{o}</li>
-              ))}
-            </ul>
-          </section>
-          <section className={tarjeta}>
-            <h2 className="mb-3 text-xl font-bold">
-              {t("ifhema.organizacionTitulo")}
-            </h2>
-            <div className="space-y-3">
-              {lista("ifhema.organizacion").map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </section>
-        </div>
 
         <section className={tarjeta}>
           <h2 className="mb-1 text-xl font-bold">
@@ -113,15 +129,8 @@ export function Ifhema() {
         </section>
 
         <section className={tarjeta}>
-          <h2 className="mb-3 flex items-center gap-2 text-xl font-bold">
-            <Trophy size={22} aria-hidden />
-            {t("ifhema.copaTitulo")}
-          </h2>
-          <div className="space-y-3">
-            {lista("ifhema.copa").map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </div>
+          <h2 className="mb-2 text-xl font-bold">{t("ifhema.copaTitulo")}</h2>
+          <p>{t("ifhema.copa")}</p>
         </section>
 
         <a
