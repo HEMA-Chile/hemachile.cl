@@ -1,12 +1,12 @@
-import type { ReactNode } from "react";
-import type { Silueta } from "../data/hema";
+import type { ReactNode } from 'react'
+import type { Silueta } from '../data/hema'
 
 /**
  * Perfiles de los simuladores, dibujados a escala común (1 unidad = 1 cm):
  * hojas sin filo y puntas romas, como los que se usan en los clubes.
  * La empuñadura va a la izquierda. El lienzo mide 140 cm de ancho.
  */
-export const ANCHO_CM = 140;
+export const ANCHO_CM = 140
 
 /** Hoja recta con punta redondeada. */
 function Hoja({
@@ -16,26 +16,26 @@ function Hoja({
   a1,
   y,
 }: {
-  x0: number;
-  x1: number;
-  a0: number;
-  a1: number;
-  y: number;
+  x0: number
+  x1: number
+  a0: number
+  a1: number
+  y: number
 }) {
-  const r = a1 * 0.9;
+  const r = a1 * 0.9
   return (
     <path
       d={`M${x0},${y - a0 / 2} L${x1 - r},${y - a1 / 2} Q${x1},${y - a1 / 2} ${x1},${y} Q${x1},${y + a1 / 2} ${x1 - r},${y + a1 / 2} L${x0},${y + a0 / 2} Z`}
     />
-  );
+  )
 }
 
 const trazo = {
-  fill: "none",
-  stroke: "currentColor",
+  fill: 'none',
+  stroke: 'currentColor',
   strokeWidth: 0.7,
-  strokeLinecap: "round" as const,
-};
+  strokeLinecap: 'round' as const,
+}
 
 function Ropera({ y }: { y: number }) {
   return (
@@ -44,15 +44,13 @@ function Ropera({ y }: { y: number }) {
       <rect x={3.6} y={y - 0.9} width={8.6} height={1.8} />
       <rect x={12} y={y - 12} width={0.8} height={24} rx={0.4} />
       {/* taza */}
-      <path
-        d={`M12.8,${y - 6} Q20.5,${y - 6} 20.5,${y} Q20.5,${y + 6} 12.8,${y + 6} Z`}
-      />
+      <path d={`M12.8,${y - 6} Q20.5,${y - 6} 20.5,${y} Q20.5,${y + 6} 12.8,${y + 6} Z`} />
       {/* guardamano */}
       <path d={`M12.4,${y + 11.6} Q3.2,${y + 11} 2,${y + 1.6}`} {...trazo} />
       <Hoja x0={20.4} x1={121} a0={1.6} a1={0.9} y={y} />
       <circle cx={121.2} cy={y} r={0.9} />
     </g>
-  );
+  )
 }
 
 function Broquel({ cx, cy }: { cx: number; cy: number }) {
@@ -70,7 +68,7 @@ function Broquel({ cx, cy }: { cx: number; cy: number }) {
       <circle cx={cx} cy={cy} r={5.2} fillOpacity={0.55} />
       <circle cx={cx} cy={cy} r={5.2} {...trazo} strokeWidth={0.5} />
     </g>
-  );
+  )
 }
 
 const DIBUJOS: Record<Silueta, { alto: number; dibujo: ReactNode }> = {
@@ -187,46 +185,28 @@ const DIBUJOS: Record<Silueta, { alto: number; dibujo: ReactNode }> = {
       <g>
         <rect x={1} y={15} width={94} height={2} rx={1} />
         {/* cazoleta de cuero o mimbre */}
-        <path d="M16,13.4 L16,17 C16,29 2,28.2 2.6,17 Z" fillOpacity={0.45} />
+        <path d="M16,17 C16,29 2,28.2 2.6,17 Z" fillOpacity={0.45} />
         <path d="M16,13.4 L16,17 C16,29 2,28.2 2.6,17" {...trazo} />
       </g>
     ),
   },
-};
+}
 
-export function SiluetaArma({
-  silueta,
-  className,
-}: {
-  silueta: Silueta;
-  className?: string;
-}) {
-  const { alto, dibujo } = DIBUJOS[silueta];
+export function SiluetaArma({ silueta, className }: { silueta: Silueta; className?: string }) {
+  const { alto, dibujo } = DIBUJOS[silueta]
   return (
-    <svg
-      viewBox={`0 0 ${ANCHO_CM} ${alto}`}
-      className={className}
-      fill="currentColor"
-      aria-hidden
-    >
+    <svg viewBox={`0 0 ${ANCHO_CM} ${alto}`} className={className} fill="currentColor" aria-hidden>
       {dibujo}
     </svg>
-  );
+  )
 }
 
 /** Regla en centímetros, a la misma escala que las siluetas. */
 export function ReglaCm({ className }: { className?: string }) {
-  const marcas = Array.from({ length: 14 }, (_, i) => i * 10);
+  const marcas = Array.from({ length: 14 }, (_, i) => i * 10)
   return (
     <svg viewBox={`0 0 ${ANCHO_CM} 7`} className={className} aria-hidden>
-      <line
-        x1={0}
-        y1={0.4}
-        x2={130}
-        y2={0.4}
-        stroke="currentColor"
-        strokeWidth={0.3}
-      />
+      <line x1={0} y1={0.4} x2={130} y2={0.4} stroke="currentColor" strokeWidth={0.3} />
       {marcas.map((cm) => (
         <g key={cm}>
           <line
@@ -239,11 +219,11 @@ export function ReglaCm({ className }: { className?: string }) {
           />
           {cm % 50 === 0 && (
             <text x={cm + 0.8} y={6.4} fontSize={3.4} fill="currentColor">
-              {cm === 0 ? "0 cm" : cm}
+              {cm === 0 ? '0 cm' : cm}
             </text>
           )}
         </g>
       ))}
     </svg>
-  );
+  )
 }

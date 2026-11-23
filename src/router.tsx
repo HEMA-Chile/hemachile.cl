@@ -8,6 +8,7 @@ import { CLUBES, type Club } from './data/clubes'
  */
 export const RUTAS = {
   reconocimiento: '/',
+  hema: '/que-es-hema',
   hemaChile: '/hema-chile',
   camo: '/camo',
   ifhema: '/ifhema',

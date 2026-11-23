@@ -81,6 +81,15 @@ export function metaDeRuta(ruta: string, idioma: Idioma = 'es'): MetaPagina {
         ruta,
         indexable: true,
       }
+    case RUTAS.hema:
+      return {
+        titulo: es ? '¿Qué es HEMA? Esgrima histórica europea' : 'What is HEMA? Historical European fencing',
+        descripcion: es
+          ? 'HEMA explicado en simple: qué es la esgrima histórica europea, sus once armas, cómo se puntúa, qué protección se usa y dónde practicarla en Chile.'
+          : 'HEMA made simple: what historical European fencing is, its eleven weapons, how scoring works, the protective gear and where to train in Chile.',
+        ruta,
+        indexable: true,
+      }
     case RUTAS.hemaChile:
       return {
         titulo: es
@@ -144,6 +153,7 @@ export function metaDeRuta(ruta: string, idioma: Idioma = 'es'): MetaPagina {
 /** Páginas que van al sitemap y se pre-renderizan. */
 export const RUTAS_INDEXABLES: string[] = [
   RUTAS.reconocimiento,
+  RUTAS.hema,
   RUTAS.hemaChile,
   RUTAS.camo,
   RUTAS.ifhema,
