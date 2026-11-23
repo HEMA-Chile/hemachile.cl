@@ -172,6 +172,13 @@ export function horarioSchema(horarios: string): string[] | undefined {
   return salida.length ? salida : undefined
 }
 
+/** Perfiles del club en otros sitios (web propia e Instagram) para schema.org. */
+function sameAs(club: Club) {
+  return [club.web, club.instagram && `https://www.instagram.com/${club.instagram}/`].filter(
+    (u): u is string => Boolean(u),
+  )
+}
+
 /** Datos estructurados (JSON-LD) específicos de una página. */
 export function datosEstructuradosDeRuta(ruta: string): object[] {
   const club = clubDeRuta(ruta)
@@ -198,7 +205,7 @@ export function datosEstructuradosDeRuta(ruta: string): object[] {
       geo: { '@type': 'GeoCoordinates', latitude: club.coordenadas[0], longitude: club.coordenadas[1] },
       ...(horarioSchema(club.horarios) && { openingHours: horarioSchema(club.horarios) }),
       ...(club.correo && { email: club.correo }),
-      ...(club.instagram && { sameAs: [`https://www.instagram.com/${club.instagram}/`] }),
+      ...(sameAs(club).length && { sameAs: sameAs(club) }),
       memberOf: { '@id': `${SITIO}/#organizacion` },
     },
     {

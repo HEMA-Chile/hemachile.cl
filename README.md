@@ -20,6 +20,7 @@ Toda la información de los clubes está en un solo archivo: **[`src/data/clubes
 - **Quitar un club:** borra su bloque de la lista (y su logo de `public/logos/` si ya no se usa).
 - **Especialidades:** usa las claves de [`src/data/armas.ts`](src/data/armas.ts) (`espadaLarga`, `sableMilitar`, etc.), que corresponden a las 11 especialidades de la solicitud de reconocimiento ante el Mindep.
 - **Horarios:** se escriben en español; los días se traducen solos al inglés.
+- **Sitio web (opcional):** campo `web` con la URL completa; aparece en la ficha del mapa y en la página del club.
 
 Esta lista alimenta el mapa, la ficha y la página de cada club, el sitemap y los datos para buscadores (JSON-LD), así que no hay que tocar nada más. Los cambios se pueden hacer directamente desde la web de GitHub (botón ✏️ sobre el archivo).
 

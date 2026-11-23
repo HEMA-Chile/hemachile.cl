@@ -35,7 +35,9 @@ function datosEstructurados(): Plugin {
           },
           geo: { '@type': 'GeoCoordinates', latitude: c.coordenadas[0], longitude: c.coordenadas[1] },
           ...(c.correo && { email: c.correo }),
-          ...(c.instagram && { sameAs: [`https://www.instagram.com/${c.instagram}/`] }),
+          ...((c.web || c.instagram) && {
+            sameAs: [c.web, c.instagram && `https://www.instagram.com/${c.instagram}/`].filter(Boolean),
+          }),
           logo: `${SITIO}${c.icono}`,
         })),
       }

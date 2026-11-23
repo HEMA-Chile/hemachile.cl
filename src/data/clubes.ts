@@ -24,6 +24,8 @@ export interface Club {
   ciudad: string
   direccion: string
   horarios: string
+  /** Opcional: sitio web propio del club (URL completa). */
+  web?: string
   instagram?: string
   correo?: string
   armas: Arma[]
@@ -41,6 +43,7 @@ export const CLUBES: Club[] = [
     ciudad: 'Santiago',
     direccion: 'Parroquia La Natividad del Señor, Av. Ossa 479, La Reina',
     horarios: 'Martes 19:00–21:00 / Jueves 19:00–21:00 / Sábado 10:30–13:30',
+    web: 'https://esgrimahistorica.cl',
     instagram: 'aehch_chile',
     correo: 'contacto.aehch@gmail.com',
     armas: ['espadaLarga', 'espadaRopera', 'sableMilitar', 'espadaYBroquel'],
@@ -93,6 +96,7 @@ export const CLUBES: Club[] = [
     ciudad: 'Santiago',
     direccion: 'Canchas Cristo Salva, Av. Macul 2645, Macul',
     horarios: 'Martes 19:00–21:30 / Jueves 19:00–21:30 / Sábado 10:00–13:00',
+    web: 'https://praeliumaustralis.cl',
     instagram: 'praelium_australis',
     correo: 'praeliumaustralis@gmail.com',
     armas: ['espadaLarga', 'espadaYBroquel', 'sableMilitar', 'messer'],

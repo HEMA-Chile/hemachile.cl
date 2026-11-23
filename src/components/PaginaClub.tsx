@@ -1,4 +1,4 @@
-import { CalendarClock, Mail, MapPin, MapPinned, Swords } from 'lucide-react'
+import { CalendarClock, Globe, Mail, MapPin, MapPinned, Swords } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ARMAS } from '../data/armas'
 import { CLUBES, type Club } from '../data/clubes'
@@ -89,10 +89,18 @@ export function PaginaClub({ club }: { club: Club }) {
           </ul>
         </section>
 
-        {(club.instagram || club.correo) && (
+        {(club.web || club.instagram || club.correo) && (
           <section className={tarjeta}>
             <h2 className="mb-3 text-xl font-bold">{t('club.contacto')}</h2>
             <div className="space-y-2">
+                {club.web && (
+                  <p className="flex items-center gap-2">
+                    <Globe size={20} aria-hidden />
+                    <a href={club.web} target="_blank" rel="noopener" className="break-all hover:underline">
+                      {club.web.replace(/^https?:\/\//, '').replace(/\/$/, '')}
+                    </a>
+                  </p>
+                )}
               {club.instagram && (
                 <p className="flex items-center gap-2">
                   <IconoInstagram size={20} />
