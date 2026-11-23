@@ -312,6 +312,13 @@ export const MITOS: { mito: Texto; realidad: Texto }[] = [
     },
   },
   {
+    mito: { es: '«Se visten de época»', en: '“They dress up in period costume”' },
+    realidad: {
+      es: 'Se entrena con ropa deportiva y protección moderna: careta, chaqueta acolchada y guantes.',
+      en: 'Training is in sportswear and modern protective gear: mask, padded jacket and gloves.',
+    },
+  },
+  {
     mito: {
       es: '«Las espadas pesaban una tonelada»',
       en: '“Swords weighed a ton”',
