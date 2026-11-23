@@ -123,6 +123,8 @@ const resources = {
         simulador: 'Un simulador de espada larga, a escala. Así son los que usamos:',
         armasTitulo: 'Once armas, seis siglos',
         armasAyuda: 'Elige un arma para verla a escala y saber de qué época viene.',
+        armasNota:
+          'No son todas las armas de HEMA: son las que se compiten en formato deportivo. Otras, como el montante o las armas de asta, se estudian y se muestran en talleres y demostraciones.',
         fuentes: 'Maestros y fuentes',
         puntoTitulo: '¿Punto o no?',
         puntoAyuda: 'Ponte en el lugar del juez. Las reglas premian el control, no la fuerza.',
@@ -330,6 +332,8 @@ const resources = {
         simulador: 'A longsword simulator, to scale. This is what we use:',
         armasTitulo: 'Eleven weapons, six centuries',
         armasAyuda: 'Pick a weapon to see it to scale and learn where it comes from.',
+        armasNota:
+          'These are not all the weapons of HEMA: they are the ones fought in sport competition. Others, such as the montante or polearms, are studied and shown in workshops and demonstrations.',
         fuentes: 'Masters and sources',
         puntoTitulo: 'Point or no point?',
         puntoAyuda: 'Put yourself in the judge’s place. The rules reward control, not force.',
