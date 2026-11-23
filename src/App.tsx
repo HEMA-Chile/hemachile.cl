@@ -7,6 +7,7 @@ import { FichaClub } from './components/FichaClub'
 import { Reconocimiento } from './components/Reconocimiento'
 import { HemaChile } from './components/HemaChile'
 import { Camo } from './components/Camo'
+import { Ifhema } from './components/Ifhema'
 import { PaginaClub } from './components/PaginaClub'
 import { NoEncontrada } from './components/NoEncontrada'
 import { useMetaPagina } from './hooks/useMetaPagina'
@@ -66,6 +67,8 @@ export default function App() {
         <HemaChile />
       ) : ruta === RUTAS.camo ? (
         <Camo />
+      ) : ruta === RUTAS.ifhema ? (
+        <Ifhema />
       ) : club ? (
         <PaginaClub club={club} />
       ) : ruta === RUTAS.reconocimiento ? (

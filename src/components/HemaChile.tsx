@@ -15,7 +15,7 @@ export function HemaChile() {
   const actividades = t('hemaChile.actividades', { returnObjects: true }) as {
     titulo: string
     texto: string
-    enlace?: 'camo' | 'reconocimiento'
+    enlace?: 'camo' | 'reconocimiento' | 'ifhema'
   }[]
 
   return (

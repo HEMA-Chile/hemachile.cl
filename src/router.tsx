@@ -10,6 +10,7 @@ export const RUTAS = {
   reconocimiento: '/',
   hemaChile: '/hema-chile',
   camo: '/camo',
+  ifhema: '/ifhema',
   mapa: '/mapa',
 } as const
 

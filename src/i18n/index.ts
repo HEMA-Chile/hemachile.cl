@@ -37,6 +37,7 @@ const resources = {
         reconocimiento: 'Reconocimiento deportivo',
         hemaChile: '¿Qué es HEMA Chile?',
         camo: 'CAMO',
+        ifhema: 'IFHEMA',
       },
       camo: {
         titulo: 'CAMO – Congreso de Artes Marciales Occidentales',
@@ -87,6 +88,7 @@ const resources = {
           {
             titulo: 'Vínculo internacional',
             texto: 'Representamos a Chile como observador ante la International Federation of Historical European Martial Arts (IFHEMA) desde 2025. En su Asamblea General de septiembre de 2025 presentamos el estado de la disciplina en el país.',
+            enlace: 'ifhema',
           },
           {
             titulo: 'Reglas y arbitraje',
@@ -100,6 +102,48 @@ const resources = {
         verMas: 'Ver más',
         clubesTitulo: 'Clubes miembros',
         verMapa: 'Ver en el mapa',
+      },
+      ifhema: {
+        titulo: 'IFHEMA',
+        logoAlt: 'Logo de IFHEMA: dos espadas cruzadas tras un sello con el nombre de la federación',
+        intro:
+          'La International Federation of Historical European Martial Arts (IFHEMA) es la federación internacional que reúne a las federaciones nacionales de HEMA. Chile participa en ella como observador desde 2025.',
+        chileTitulo: 'Chile, observador en IFHEMA',
+        chile: [
+          'Chile ingresó como observador en 2025, por invitación de IFHEMA a Virtus Esgrima Histórica. En la Asamblea General de septiembre de 2025, celebrada en Atenas junto a la IFHEMA Cup, HEMA Chile presentó el estado de la disciplina en el país, con cerca de 418 practicantes informados por los propios clubes. Hoy esa función la ejerce HEMA Chile.',
+          'Como observador, Chile participa en la vida de la federación internacional, pero aún no puede ser miembro pleno: IFHEMA exige que cada país esté representado por una federación nacional. En Chile, esa federación solo puede constituirse como organización deportiva una vez que HEMA sea reconocida como deporte. Por eso la solicitud de reconocimiento ante el Ministerio del Deporte es el paso previo, y IFHEMA la respalda con una carta de apoyo.',
+          'En agosto de 2026, los clubes de HEMA Chile se sumaron además al evento mundial de IFHEMA «HEMA goes public» con «HEMA sale a la calle»: demostraciones abiertas en seis ciudades, de Copiapó a Puerto Montt.',
+        ],
+        verSolicitud: 'Ver la solicitud de reconocimiento',
+        queEsTitulo: '¿Qué es IFHEMA?',
+        queEs: [
+          'IFHEMA es una «federación de federaciones»: la integran federaciones nacionales de HEMA, u organizaciones que cumplen ese papel en su país. Su misión es conectar y apoyar a sus miembros, coordinar sus actividades y proteger sus intereses. Respeta la autonomía de cada miembro: no le impone políticas y le presta ayuda cuando la pide.',
+          'Su origen está en la Iniciativa de Viena, propuesta por la comunidad austriaca en 2009. En 2013, en el encuentro de HEMAC en Dijon (Francia), representantes de diez países europeos formaron grupos de trabajo cuyo resultado fue la asamblea constitutiva de IFHEMA.',
+        ],
+        objetivosTitulo: 'Objetivos',
+        objetivos: [
+          'Servir de red entre las comunidades de HEMA.',
+          'Proteger la autonomía de HEMA frente a otras artes marciales y deportes de combate.',
+          'Fomentar la investigación y la publicación.',
+          'Apoyar el desarrollo de equipamiento adecuado para HEMA.',
+          'Ofrecer plataformas para organizar competencias.',
+          'Promover la sostenibilidad, el intercambio de conocimiento, la excelencia y la educación.',
+        ],
+        organizacionTitulo: 'Cómo se organiza',
+        organizacion: [
+          'Su órgano principal es la Asamblea General, donde están representadas todas las federaciones miembro. El Comité Ejecutivo, formado por la presidencia y entre tres y cinco representantes elegidos por la Asamblea, es su órgano ejecutivo.',
+          'Pueden ser miembros las federaciones que agrupen a la mayoría de la comunidad de HEMA de su país y organicen regularmente actividades nacionales o internacionales. Sus valores son la transparencia, el buen gobierno y la responsabilidad.',
+        ],
+        miembrosTitulo: 'Miembros y observadores',
+        miembrosNota: 'Según el sitio de IFHEMA, revisado en {{fecha}}.',
+        federaciones: 'Federaciones miembro',
+        observadores: 'Observadores',
+        copaTitulo: 'IFHEMA Cup',
+        copa: [
+          'La IFHEMA Cup es la competencia de selecciones nacionales de la federación. Cada equipo lo forman tres esgrimistas titulares, un suplente y un juez, todos de la nacionalidad del país que representan, y pueden inscribirse federaciones miembro u observadoras.',
+          'La edición 2025 se disputó en Atenas, en espada larga, con un máximo de 14 equipos.',
+        ],
+        visitar: 'Visitar el sitio de IFHEMA',
       },
       reconocimiento: {
         titulo: 'Reconocimiento deportivo de HEMA',
@@ -156,6 +200,7 @@ const resources = {
         reconocimiento: 'Sport recognition',
         hemaChile: 'About HEMA Chile',
         camo: 'CAMO',
+        ifhema: 'IFHEMA',
       },
       camo: {
         titulo: 'CAMO – Western Martial Arts Congress',
@@ -206,6 +251,7 @@ const resources = {
           {
             titulo: 'International ties',
             texto: 'We represent Chile as an observer at the International Federation of Historical European Martial Arts (IFHEMA) since 2025. At its General Assembly in September 2025 we presented the state of the discipline in the country.',
+            enlace: 'ifhema',
           },
           {
             titulo: 'Rules and refereeing',
@@ -219,6 +265,48 @@ const resources = {
         verMas: 'Learn more',
         clubesTitulo: 'Member clubs',
         verMapa: 'View on the map',
+      },
+      ifhema: {
+        titulo: 'IFHEMA',
+        logoAlt: 'IFHEMA logo: two crossed swords behind a seal with the federation’s name',
+        intro:
+          'The International Federation of Historical European Martial Arts (IFHEMA) is the international federation of national HEMA federations. Chile has taken part as an observer since 2025.',
+        chileTitulo: 'Chile, an IFHEMA observer',
+        chile: [
+          'Chile joined as an observer in 2025, after IFHEMA invited Virtus Esgrima Histórica. At the General Assembly in September 2025, held in Athens alongside the IFHEMA Cup, HEMA Chile presented the state of the discipline in the country, with around 418 practitioners reported by the clubs themselves. That role is now held by HEMA Chile.',
+          'As an observer, Chile takes part in the life of the international federation but cannot yet be a full member: IFHEMA requires each country to be represented by a national federation. In Chile, such a federation can only be set up as a sports organisation once HEMA is recognised as a sport. That is why the request for recognition to the Ministry of Sport comes first, and IFHEMA backs it with a letter of support.',
+          'In August 2026, HEMA Chile clubs also joined IFHEMA’s worldwide “HEMA goes public” event with “HEMA sale a la calle”: open demonstrations in six cities, from Copiapó to Puerto Montt.',
+        ],
+        verSolicitud: 'See the request for recognition',
+        queEsTitulo: 'What is IFHEMA?',
+        queEs: [
+          'IFHEMA is a “federation of federations”: its members are national HEMA federations, or organisations that play that role in their country. Its mission is to connect and support its members, coordinate their activities and protect their interests. It respects each member’s autonomy: it does not impose policies and offers help when asked.',
+          'It grew out of the Vienna Initiative, proposed by the Austrian community in 2009. In 2013, at the HEMAC gathering in Dijon (France), representatives of ten European countries set up working groups that led to IFHEMA’s founding assembly.',
+        ],
+        objetivosTitulo: 'Aims',
+        objetivos: [
+          'To act as a network between HEMA communities.',
+          'To protect the autonomy of HEMA from other martial arts and combat sports.',
+          'To encourage research and publication.',
+          'To support the development of suitable HEMA equipment.',
+          'To provide platforms for organising competitions.',
+          'To promote sustainability, knowledge sharing, excellence and education.',
+        ],
+        organizacionTitulo: 'How it is organised',
+        organizacion: [
+          'Its main body is the General Assembly, where every member federation is represented. The Executive Committee, made up of the president and three to five representatives elected by the Assembly, is its executive body.',
+          'Membership is open to federations that bring together most of their country’s HEMA community and regularly hold national or international activities. Its values are transparency, good governance and accountability.',
+        ],
+        miembrosTitulo: 'Members and observers',
+        miembrosNota: 'According to the IFHEMA website, checked in {{fecha}}.',
+        federaciones: 'Member federations',
+        observadores: 'Observers',
+        copaTitulo: 'IFHEMA Cup',
+        copa: [
+          'The IFHEMA Cup is the federation’s national-team competition. Each team has three starting fencers, one reserve and one judge, all nationals of the country they represent, and both member and observer federations can enter.',
+          'The 2025 edition was held in Athens, in longsword, with a maximum of 14 teams.',
+        ],
+        visitar: 'Visit the IFHEMA website',
       },
       reconocimiento: {
         titulo: 'Sport recognition for HEMA',
