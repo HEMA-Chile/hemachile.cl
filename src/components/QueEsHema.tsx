@@ -48,7 +48,7 @@ export function QueEsHema() {
               alt={t('hema.esgrimistaAlt')}
               width={702}
               height={1092}
-              className="h-80 w-auto shrink-0 sm:h-[26rem] dark:drop-shadow-[0_0_1.5px_rgba(255,255,255,0.9)]"
+              className="h-80 w-auto shrink-0 sm:order-first sm:h-[26rem] dark:drop-shadow-[0_0_1.5px_rgba(255,255,255,0.9)]"
             />
           </div>
 
