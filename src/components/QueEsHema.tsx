@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Check, MapPinned, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import esgrimista from '../assets/esgrimista.webp'
 import { ARMAS } from '../data/armas'
 import {
   ARMAS_HISTORICAS,
@@ -35,10 +36,21 @@ export function QueEsHema() {
       <article className="mx-auto flex max-w-4xl flex-col gap-14">
         {/* Inicio: la definición y el simulador, a escala */}
         <header className="flex flex-col gap-6">
-          <h1 className="max-w-3xl text-4xl leading-tight font-bold sm:text-5xl sm:leading-tight">
-            {t('hema.titulo')}
-          </h1>
-          <p className="max-w-2xl text-lg">{t('hema.intro')}</p>
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-end sm:gap-8">
+            <div className="flex flex-col gap-6 sm:flex-1">
+              <h1 className="text-4xl leading-tight font-bold sm:text-5xl sm:leading-tight">
+                {t('hema.titulo')}
+              </h1>
+              <p className="text-lg">{t('hema.intro')}</p>
+            </div>
+            <img
+              src={esgrimista}
+              alt={t('hema.esgrimistaAlt')}
+              width={702}
+              height={1092}
+              className="h-80 w-auto shrink-0 sm:order-first sm:h-[26rem] dark:drop-shadow-[0_0_1.5px_rgba(255,255,255,0.9)]"
+            />
+          </div>
 
           <figure className="mt-2">
             <div className="relative">

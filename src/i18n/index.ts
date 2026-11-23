@@ -120,6 +120,8 @@ const resources = {
         titulo: 'HEMA es esgrima europea reconstruida desde los libros',
         intro:
           'Historical European Martial Arts. Dos personas combaten de verdad, con protección y espadas de acero sin filo, usando las técnicas que maestros europeos dejaron escritas entre los siglos XIV y XIX.',
+        esgrimistaAlt:
+          'Ilustración de un esgrimista de HEMA en guardia, con careta, chaqueta acolchada, guantes, protecciones y una espada larga al hombro',
         simulador: 'Un simulador de espada larga, a escala. Así son los que usamos:',
         armasTitulo: 'Once armas, seis siglos',
         armasAyuda: 'Elige un arma para verla a escala y saber de qué época viene.',
@@ -329,6 +331,8 @@ const resources = {
         titulo: 'HEMA is European fencing rebuilt from the books',
         intro:
           'Historical European Martial Arts. Two people fight for real, with protective gear and unsharpened steel swords, using the techniques European masters wrote down between the 14th and 19th centuries.',
+        esgrimistaAlt:
+          'Illustration of a HEMA fencer on guard, with mask, padded jacket, gloves, joint guards and a longsword at the shoulder',
         simulador: 'A longsword simulator, to scale. This is what we use:',
         armasTitulo: 'Eleven weapons, six centuries',
         armasAyuda: 'Pick a weapon to see it to scale and learn where it comes from.',
