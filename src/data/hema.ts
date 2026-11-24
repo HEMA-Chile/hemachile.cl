@@ -207,8 +207,8 @@ export const EQUIPO: { id: Pieza; nombre: Texto; texto: Texto }[] = [
     id: 'careta',
     nombre: { es: 'Careta', en: 'Mask' },
     texto: {
-      es: 'Malla de acero que resiste 1.600 N, la misma norma de la esgrima olímpica, con protección para la nuca.',
-      en: 'Steel mesh rated to 1,600 N, the Olympic fencing standard, with back-of-head protection.',
+      es: 'Malla de acero inoxidable y babero que resiste 1.600 N a la perforación: el nivel más alto de la norma de la esgrima olímpica. Lleva protección para la nuca.',
+      en: 'Stainless steel mesh and a bib that resists 1,600 N of puncture force: the top level of the Olympic fencing standard. It has back-of-head protection.',
     },
   },
   {
